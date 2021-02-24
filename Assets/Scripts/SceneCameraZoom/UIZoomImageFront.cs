@@ -19,7 +19,11 @@ public class UIZoomImageFront : MonoBehaviour, IScrollHandler
     private void Awake()
     {
         initalScale = transform.localScale;
-        BackProperties = BackImage.GetComponent<UIZoomImage>();
+
+        if (BackImage != null)
+        {
+            BackProperties = BackImage.GetComponent<UIZoomImage>();
+        }
     }
 
     public void OnScroll(PointerEventData eventData)
@@ -30,14 +34,18 @@ public class UIZoomImageFront : MonoBehaviour, IScrollHandler
         desiredScale = ClampDesiredScale(desiredScale);
 
         transform.localScale = desiredScale;
-        if (transform.localScale.z < 2.4f)
+
+        if (BackImage != null)
         {
-            BackImage.SendMessage("OnScroll", eventData, SendMessageOptions.DontRequireReceiver);
-        }
-        else
-        {
-            BackProperties.ZoomSpeed = 0.01f;
-            gameObject.GetComponent<Image>().raycastTarget = false;
+            if (transform.localScale.z < 2.4f)
+            {
+                BackImage.SendMessage("OnScroll", eventData, SendMessageOptions.DontRequireReceiver);
+            }
+            else
+            {
+                BackProperties.ZoomSpeed = 0.01f;
+                gameObject.GetComponent<Image>().raycastTarget = false;
+            }
         }
     }
 
