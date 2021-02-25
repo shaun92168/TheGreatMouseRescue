@@ -9,6 +9,7 @@ public class RangeDetection : MonoBehaviour
     public GameState gameState;
 
     private float shortestDistance;
+    private Transform currentTrap;
     void Update()
     {
         shortestDistance = 100;
