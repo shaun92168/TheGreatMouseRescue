@@ -1184,6 +1184,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   kittens:
   - {fileID: 1544484010}
+  - {fileID: 959865659}
   player: {fileID: 5042506006583783639}
   gameState: {fileID: 11400000, guid: 82718da303039c540b5aedada1cd38af, type: 2}
 --- !u!114 &678513179
@@ -1704,6 +1705,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 914665518}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!224 &959865659 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 9035670017919674082, guid: cbcd97a549c71034c84eabd8e6ad62ba, type: 3}
+  m_PrefabInstance: {fileID: 2071531007}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1028697777 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 104078, guid: 57a32613b8338fb46b75889d19358690, type: 3}
