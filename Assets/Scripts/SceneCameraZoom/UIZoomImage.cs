@@ -6,10 +6,10 @@ using UnityEngine.EventSystems;
 public class UIZoomImage : MonoBehaviour, IScrollHandler
 {
     private Vector3 initalScale;
-
     public float ZoomSpeed = 0.1f;
-
     public float maxZoom = 10f;
+
+    public CS_PageMgr CS_PgMgr;
 
     private void Awake()
     {
@@ -32,5 +32,16 @@ public class UIZoomImage : MonoBehaviour, IScrollHandler
         desiredScale = Vector3.Min(initalScale * maxZoom, desiredScale);
         
         return desiredScale;
+    }
+
+    public void AnimationEvent(int eventID)
+    {
+        if (CS_PgMgr != null)
+        {
+            // Forward message to manager
+            CS_PgMgr.AnimationEvent(eventID);
+        }
+
+//        Debug.Log("PrintEvent: " + eventID + " called at: " + Time.time);
     }
 }

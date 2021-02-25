@@ -565,7 +565,7 @@ MonoBehaviour:
     store shortly after his mom leaves. Lindsay will have to tag along as best as
     she can."
   - 'Lindsay could not keep up with her big brother and found herself caught alone
-    and trapped by Cheddars mouse catcher. '
+    and trapped by Cheddar city''s mouse catcher. '
   - The catcher took frightened Lindsay home to lock her up in his cage.
   - "Sam did not want Karl to get his mom, so he dragged Karl to the mouse catcher\u2019s
     home."
@@ -969,6 +969,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ZoomSpeed: 0.001
   maxZoom: 10
+  CS_PgMgr: {fileID: 0}
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
