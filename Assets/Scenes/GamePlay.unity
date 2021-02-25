@@ -1294,6 +1294,8 @@ MonoBehaviour:
   kittens:
   - {fileID: 1544484010}
   - {fileID: 959865659}
+  - {fileID: 1064545893}
+  - {fileID: 2027676788}
   player: {fileID: 5042506006583783639}
   gameState: {fileID: 11400000, guid: 82718da303039c540b5aedada1cd38af, type: 2}
 --- !u!114 &678513179
@@ -2095,6 +2097,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7846eadc6a1bf474a997182dd8ddfc70, type: 3}
+--- !u!224 &1064545893 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 6293979517948680877, guid: 7846eadc6a1bf474a997182dd8ddfc70, type: 3}
+  m_PrefabInstance: {fileID: 1064545892}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1182716574
 GameObject:
   m_ObjectHideFlags: 0
@@ -3474,6 +3481,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7846eadc6a1bf474a997182dd8ddfc70, type: 3}
+--- !u!224 &2027676788 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 6293979517948680877, guid: 7846eadc6a1bf474a997182dd8ddfc70, type: 3}
+  m_PrefabInstance: {fileID: 2027676787}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2053494453
 GameObject:
   m_ObjectHideFlags: 0
