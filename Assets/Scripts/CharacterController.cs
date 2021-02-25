@@ -7,7 +7,7 @@ public class CharacterController : MonoBehaviour
    // public Material[] materials;
     public Renderer rend;
     public Transform trans;
-
+    public bool isPressed;
     // 0 = Stand, 1 = Run , 2 = Sneak, 3 = Crawl
     public int playerState = 0;
     public float sneakHeight = 0.55f;
@@ -31,27 +31,37 @@ public class CharacterController : MonoBehaviour
         vert = Input.GetAxisRaw("Vertical");
         rigidBody.velocity = new Vector3(hori * speed, 0, vert * speed);
 
+        if (isPressed)
+        {
+            playerState = 0;
+        }
+
         // Run
         if (Input.GetKeyDown(KeyCode.Space))
         {
+            isPressed = !isPressed;
             playerState = 1;
         }
 
         // Sneak
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
+            isPressed = !isPressed;
             playerState = 2;
         }
 
         // Crawl
         if (Input.GetKeyDown(KeyCode.LeftControl))
         {
+            isPressed = !isPressed;
             playerState = 3;
         }
 
         if (playerState == 0)
         {
             transform.localRotation = Quaternion.Euler(0, 0, 0);
+            speed = 10.0f;
+            rend.GetComponent<Renderer>().material.color = Color.black;
         }
 
         if (playerState == 1)
