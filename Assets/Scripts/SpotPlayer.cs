@@ -6,8 +6,9 @@ using UnityEngine.UI;
 
 public class SpotPlayer : MonoBehaviour
 {
+    [SerializeField]
+    private Material myMaterial;
 
-    public Material myMaterial;
     private Color originalColor;
     public Text label;
     public GameState gameState;
