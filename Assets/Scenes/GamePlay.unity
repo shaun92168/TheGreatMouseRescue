@@ -1200,7 +1200,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameState: {fileID: 11400000, guid: 82718da303039c540b5aedada1cd38af, type: 2}
   detectingRange: 3
-  incrementRate: 10
+  incrementRate: 20
   decreasingRate: 5
 --- !u!4 &678513180
 Transform:
@@ -1229,7 +1229,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameState: {fileID: 11400000, guid: 82718da303039c540b5aedada1cd38af, type: 2}
-  alertSlider: {fileID: 1348000098}
+  alertBar: {fileID: 1348000097}
 --- !u!1 &688822099
 GameObject:
   m_ObjectHideFlags: 0
