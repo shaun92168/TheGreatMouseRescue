@@ -1280,6 +1280,18 @@ PrefabInstance:
       propertyPath: gameState
       value: 
       objectReference: {fileID: 11400000, guid: 82718da303039c540b5aedada1cd38af, type: 2}
+    - target: {fileID: 6293979517948680875, guid: 7846eadc6a1bf474a997182dd8ddfc70, type: 3}
+      propertyPath: SpotColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6293979517948680875, guid: 7846eadc6a1bf474a997182dd8ddfc70, type: 3}
+      propertyPath: SpotColor.g
+      value: 0.703978
+      objectReference: {fileID: 0}
+    - target: {fileID: 6293979517948680875, guid: 7846eadc6a1bf474a997182dd8ddfc70, type: 3}
+      propertyPath: SpotColor.b
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6293979517948680877, guid: 7846eadc6a1bf474a997182dd8ddfc70, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -3176,6 +3188,18 @@ PrefabInstance:
       propertyPath: gameState
       value: 
       objectReference: {fileID: 11400000, guid: 82718da303039c540b5aedada1cd38af, type: 2}
+    - target: {fileID: 9035670017919674087, guid: cbcd97a549c71034c84eabd8e6ad62ba, type: 3}
+      propertyPath: SpotColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9035670017919674087, guid: cbcd97a549c71034c84eabd8e6ad62ba, type: 3}
+      propertyPath: SpotColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9035670017919674087, guid: cbcd97a549c71034c84eabd8e6ad62ba, type: 3}
+      propertyPath: SpotColor.b
+      value: 0.8135681
+      objectReference: {fileID: 0}
     - target: {fileID: 9035670017919674088, guid: cbcd97a549c71034c84eabd8e6ad62ba, type: 3}
       propertyPath: m_Name
       value: Cat 1

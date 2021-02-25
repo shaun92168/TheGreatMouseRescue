@@ -8,18 +8,20 @@ public class SpotPlayer : MonoBehaviour
 {
     [SerializeField]
     private Material myMaterial;
+    public Color SpotColor;
 
-    private Color originalColor;
+//    private Color originalColor;
     public Text label;
     public GameState gameState;
 
     public int tempCounter = 0;
 
     private bool isTrigger;
+
     void Awake()
     {
         label.text = "";
-        originalColor = myMaterial.color;
+        myMaterial.color = SpotColor;
         isTrigger = false;
     }
 
@@ -44,9 +46,9 @@ public class SpotPlayer : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             label.text = "";
-            myMaterial.color = originalColor;
+            myMaterial.color = SpotColor;
         }
-        myMaterial.color = originalColor;
+        myMaterial.color = SpotColor;
     }
 
 }
