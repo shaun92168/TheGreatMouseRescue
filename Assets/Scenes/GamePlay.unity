@@ -3166,6 +3166,10 @@ PrefabInstance:
       propertyPath: label
       value: 
       objectReference: {fileID: 3195354178427720109}
+    - target: {fileID: 9035670017919674087, guid: cbcd97a549c71034c84eabd8e6ad62ba, type: 3}
+      propertyPath: gameState
+      value: 
+      objectReference: {fileID: 11400000, guid: 82718da303039c540b5aedada1cd38af, type: 2}
     - target: {fileID: 9035670017919674088, guid: cbcd97a549c71034c84eabd8e6ad62ba, type: 3}
       propertyPath: m_Name
       value: Cat 1
