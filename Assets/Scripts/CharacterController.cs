@@ -25,7 +25,7 @@ public class CharacterController : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         hori = Input.GetAxisRaw("Horizontal");
         vert = Input.GetAxisRaw("Vertical");
@@ -39,21 +39,21 @@ public class CharacterController : MonoBehaviour
         // Run
         if (Input.GetKey(KeyCode.Space))
         {
-            //isPressed = !isPressed;
+            isPressed = !isPressed;
             playerState = 1;
         }
 
         // Sneak
         if (Input.GetKey(KeyCode.LeftShift))
         {
-            //isPressed = !isPressed;
+            isPressed = !isPressed;
             playerState = 2;
         }
 
         // Crawl
         if (Input.GetKey(KeyCode.LeftControl))
         {
-            //isPressed = !isPressed;
+            isPressed = !isPressed;
             playerState = 3;
         }
 
@@ -61,7 +61,7 @@ public class CharacterController : MonoBehaviour
         {
             transform.localRotation = Quaternion.Euler(0, 0, 0);
             speed = 10.0f;
-            rend.GetComponent<Renderer>().material.color = Color.black;
+            rend.GetComponent<Renderer>().material.color = Color.white;
         }
 
         if (playerState == 1)
