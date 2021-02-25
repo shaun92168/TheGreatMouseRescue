@@ -14,7 +14,7 @@ public class SpotPlayer : MonoBehaviour
     public int tempCounter = 0;
     void Awake()
     {
-        label.text = "???";
+        label.text = "";
         originalColor = myMaterial.color;
     }
 
@@ -35,7 +35,7 @@ public class SpotPlayer : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            label.text = "???";
+            label.text = "";
             myMaterial.color = originalColor;
         }
         myMaterial.color = originalColor;
