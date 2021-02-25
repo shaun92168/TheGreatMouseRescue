@@ -9,23 +9,15 @@ public class AlertSystem : MonoBehaviour
     public float incrementRate;
     public float decreasingRate;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        gameState.alertLevel = 0;
-        gameState.isAlertFull = false;
-        gameState.isGameOver = false;
-    }
-
-    // Update is called once per frame
     void Update()
     {
+        // check if alert is full
         if(gameState.alertLevel >= gameState.maxAlertLevel)
         {
             gameState.isAlertFull = true;
-            gameState.isGameOver = true;
         }
 
+        // increase or decrease alert base on detecting range
         if(!gameState.isGameOver)
         {
             if(gameState.nearestKittenDistance <= detectingRange)

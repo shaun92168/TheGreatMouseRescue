@@ -12,6 +12,8 @@ public class RangeDetection : MonoBehaviour
     void Update()
     {
         shortestDistance = 100;
+
+        // store the distance between the player and the closest trap
         foreach (Transform kitten in kittens)
         {
             float dist = Vector3.Distance(kitten.position, player.position);
