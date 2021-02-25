@@ -37,23 +37,23 @@ public class CharacterController : MonoBehaviour
         }
 
         // Run
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKey(KeyCode.Space))
         {
-            isPressed = !isPressed;
+            //isPressed = !isPressed;
             playerState = 1;
         }
 
         // Sneak
-        if (Input.GetKeyDown(KeyCode.LeftShift))
+        if (Input.GetKey(KeyCode.LeftShift))
         {
-            isPressed = !isPressed;
+            //isPressed = !isPressed;
             playerState = 2;
         }
 
         // Crawl
-        if (Input.GetKeyDown(KeyCode.LeftControl))
+        if (Input.GetKey(KeyCode.LeftControl))
         {
-            isPressed = !isPressed;
+            //isPressed = !isPressed;
             playerState = 3;
         }
 
