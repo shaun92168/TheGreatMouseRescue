@@ -10,12 +10,16 @@ public class SpotPlayer : MonoBehaviour
     public Material myMaterial;
     private Color originalColor;
     public Text label;
+    public GameState gameState;
 
     public int tempCounter = 0;
+
+    private bool isTrigger;
     void Awake()
     {
         label.text = "";
         originalColor = myMaterial.color;
+        isTrigger = false;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -25,6 +29,8 @@ public class SpotPlayer : MonoBehaviour
             label.text = "!!!";
             myMaterial.color = Color.red;
             tempCounter += 1;
+            isTrigger = true;
+            gameState.isTrapTrigger = true;
             if (tempCounter == 5)
             {
                SceneManager.LoadScene("GameOver");
