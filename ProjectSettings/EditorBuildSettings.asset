@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/GamePlay.unity
     guid: abfb7a8a1ea668545a61bfceab853f1e
+  - enabled: 1
+    path: Assets/Scenes/ModeChanging.unity
+    guid: 3ca921dc833161f4ca9f328877f157ce
   m_configObjects: {}

@@ -21,14 +21,7 @@ public class CharacterController : MonoBehaviour
 
     void Start()
     {
-        //rend = GetComponent<Renderer>();   
-        /* if (materials.Length == 0)
-         {
-             return;
-         }*/
         rigidBody = GetComponent<Rigidbody>();
-        
-
     }
 
     // Update is called once per frame
