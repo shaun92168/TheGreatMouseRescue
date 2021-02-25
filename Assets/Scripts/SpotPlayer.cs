@@ -31,6 +31,7 @@ public class SpotPlayer : MonoBehaviour
             tempCounter += 1;
             isTrigger = true;
             gameState.isTrapTrigger = true;
+            gameState.alertLevel = gameState.maxAlertLevel;
             if (tempCounter == 5)
             {
                SceneManager.LoadScene("GameOver");

@@ -1275,6 +1275,10 @@ PrefabInstance:
       propertyPath: label
       value: 
       objectReference: {fileID: 3195354179780500564}
+    - target: {fileID: 6293979517948680875, guid: 7846eadc6a1bf474a997182dd8ddfc70, type: 3}
+      propertyPath: gameState
+      value: 
+      objectReference: {fileID: 11400000, guid: 82718da303039c540b5aedada1cd38af, type: 2}
     - target: {fileID: 6293979517948680877, guid: 7846eadc6a1bf474a997182dd8ddfc70, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
