@@ -26,8 +26,12 @@ public class CharacterController : MonoBehaviour
         rigidBody = GetComponent<Rigidbody>();
     }
 
-    private void FixedUpdate()
+    void FixedUpdate()
     {
+        if (Input.GetKeyUp(KeyCode.Space) || Input.GetKeyUp(KeyCode.LeftShift) || Input.GetKeyUp(KeyCode.LeftControl))
+        {
+            playerState = 0;
+        }
         if (playerState == 0)
         {
             transform.localRotation = Quaternion.Euler(0, 0, 0);
@@ -54,17 +58,16 @@ public class CharacterController : MonoBehaviour
             speed = 3.0f;
             rend.GetComponent<Renderer>().material.color = Color.green;
         }
-    }
-    // Update is called once per frame
-    void Update()
-    {
+
         hori = Input.GetAxisRaw("Horizontal");
         vert = Input.GetAxisRaw("Vertical");
         rigidBody.velocity = new Vector3(hori * speed, 0, vert * speed);
-
+    }
+    void Update()
+    {
         if (!isPressed)
         {
-            playerState = 0;
+            
         }
 
         // Run
@@ -74,38 +77,29 @@ public class CharacterController : MonoBehaviour
             if (isPressed)
             {
                 playerState = 1;
+                Debug.Log("this is 1");
             }
-            //playerState = 0;
         }
-        if (Input.GetKeyUp(KeyCode.Space))
-        {
-            playerState = 0;
-        }
+       
         // Sneak
-        if (Input.GetKeyDown(KeyCode.LeftShift))
+        if (Input.GetKey(KeyCode.LeftShift))
         {
             isPressed = !isPressed;
             if (isPressed)
             {
                 playerState = 2;
+                Debug.Log("this is 2");
             }
         }
-        if (Input.GetKeyUp(KeyCode.LeftShift))
-        {
-            playerState = 0;
-        }
         // Crawl
-        if (Input.GetKeyDown(KeyCode.LeftControl))
+        if (Input.GetKey(KeyCode.LeftControl))
         {
             isPressed = !isPressed;
             if (isPressed)
             {
                 playerState = 3;
+                Debug.Log("this is 3");
             }
-        }
-        if (Input.GetKeyUp(KeyCode.LeftControl))
-        {
-            playerState = 0;
         }
 
         gameState.playerState = playerState;
