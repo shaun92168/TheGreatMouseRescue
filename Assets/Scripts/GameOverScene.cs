@@ -13,4 +13,9 @@ public class GameOverScene : MonoBehaviour
     {
         SceneManager.LoadScene("StoryScene");
     }
+
+    public void ExitGame()
+    {
+        Application.Quit();
+    }
 }
