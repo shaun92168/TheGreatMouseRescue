@@ -51,7 +51,7 @@ public class GameStateManager : MonoBehaviour
         // escape to quit the game
         if (Input.GetKey("escape"))
         {
-            Application.Quit();
+            SceneManager.LoadScene("GameOver");
         }
     }
 }
