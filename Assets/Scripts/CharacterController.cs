@@ -12,6 +12,7 @@ public class CharacterController : MonoBehaviour
     public int playerState = 0;
     public float sneakHeight = 0.55f;
     public float crawlHeight = 0.2f;
+    public GameState gameState;
 
     Rigidbody rigidBody;
     float hori;
@@ -100,6 +101,6 @@ public class CharacterController : MonoBehaviour
             //playerState = 0;
         }
 
-
+        gameState.playerState = playerState;
     }
 }

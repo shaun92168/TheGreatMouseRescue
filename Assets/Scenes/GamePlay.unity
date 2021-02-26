@@ -2323,7 +2323,7 @@ PrefabInstance:
       objectReference: {fileID: 5042506006583783639}
     - target: {fileID: 6293979517948680875, guid: 7846eadc6a1bf474a997182dd8ddfc70, type: 3}
       propertyPath: detectionRange
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6293979517948680877, guid: 7846eadc6a1bf474a997182dd8ddfc70, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3929,7 +3929,7 @@ PrefabInstance:
       objectReference: {fileID: 5042506006583783639}
     - target: {fileID: 6293979517948680875, guid: 7846eadc6a1bf474a997182dd8ddfc70, type: 3}
       propertyPath: detectionRange
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6293979517948680877, guid: 7846eadc6a1bf474a997182dd8ddfc70, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5004,5 +5004,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3387479512247752527, guid: 3b37b4de94d22434791e3ffa1f328aa3, type: 3}
+      propertyPath: gameState
+      value: 
+      objectReference: {fileID: 11400000, guid: 82718da303039c540b5aedada1cd38af, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3b37b4de94d22434791e3ffa1f328aa3, type: 3}
