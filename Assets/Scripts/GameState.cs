@@ -5,12 +5,17 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "GameState", menuName = "GameState")]
 public class GameState : ScriptableObject
 {
-    public float nearestKittenDistance;
-
-    public float alertLevel;
-    public float maxAlertLevel;
-
+    [Header("Game State")]
     public bool isAlertFull;
     public bool isTrapTrigger;
     public bool isGameOver;
+
+    [Header("Alert System")]
+    public float nearestKittenDistance;
+    public float alertLevel;
+    public float maxAlertLevel;
+
+    [Header("Player Status")]
+    // 0 = Stand, 1 = Run , 2 = Sneak, 3 = Crawl
+    public int playerState;
 }

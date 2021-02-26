@@ -18,6 +18,7 @@ public class CharacterController : MonoBehaviour
     float vert;
 
     public float speed = 10.0f;
+    public GameState gameState;
 
     void Start()
     {
@@ -83,5 +84,7 @@ public class CharacterController : MonoBehaviour
             speed = 3.0f;
             rend.GetComponent<Renderer>().material.color = Color.green;
         }
+
+        gameState.playerState = playerState;
     }
 }

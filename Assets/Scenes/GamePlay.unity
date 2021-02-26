@@ -1606,6 +1606,10 @@ MonoBehaviour:
   detectingRange: 3
   incrementRate: 20
   decreasingRate: 5
+  standRate: 1
+  runRate: 1.5
+  sneakRate: 0.5
+  crawlRate: 0.2
 --- !u!4 &678513180
 Transform:
   m_ObjectHideFlags: 0
@@ -4980,6 +4984,7 @@ MonoBehaviour:
   sneakHeight: 0
   crawlHeight: 0
   speed: 10
+  gameState: {fileID: 11400000, guid: 82718da303039c540b5aedada1cd38af, type: 2}
 --- !u!4 &5042506006583783639
 Transform:
   m_ObjectHideFlags: 0
