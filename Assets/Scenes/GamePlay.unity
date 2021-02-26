@@ -5008,5 +5008,9 @@ PrefabInstance:
       propertyPath: gameState
       value: 
       objectReference: {fileID: 11400000, guid: 82718da303039c540b5aedada1cd38af, type: 2}
+    - target: {fileID: 3387479512247752527, guid: 3b37b4de94d22434791e3ffa1f328aa3, type: 3}
+      propertyPath: isPressed
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3b37b4de94d22434791e3ffa1f328aa3, type: 3}
