@@ -68,7 +68,7 @@ public class CharacterController : MonoBehaviour
         }
 
         // Run
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKey(KeyCode.Space))
         {
             isPressed = !isPressed;
             if (isPressed)
@@ -77,7 +77,10 @@ public class CharacterController : MonoBehaviour
             }
             //playerState = 0;
         }
-
+        if (Input.GetKeyUp(KeyCode.Space))
+        {
+            playerState = 0;
+        }
         // Sneak
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
@@ -86,10 +89,11 @@ public class CharacterController : MonoBehaviour
             {
                 playerState = 2;
             }
-            //playerState = 0;
-
         }
-
+        if (Input.GetKeyUp(KeyCode.LeftShift))
+        {
+            playerState = 0;
+        }
         // Crawl
         if (Input.GetKeyDown(KeyCode.LeftControl))
         {
@@ -98,7 +102,10 @@ public class CharacterController : MonoBehaviour
             {
                 playerState = 3;
             }
-            //playerState = 0;
+        }
+        if (Input.GetKeyUp(KeyCode.LeftControl))
+        {
+            playerState = 0;
         }
 
         gameState.playerState = playerState;
