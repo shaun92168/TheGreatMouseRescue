@@ -9,6 +9,9 @@ public class SpotPlayer : MonoBehaviour
     [SerializeField]
     private Material myMaterial;
     public Color SpotColor;
+    public Transform player;
+    public float detectionRange;
+    public bool isPlayerInRange;
 
 //    private Color originalColor;
     public Text label;
@@ -16,13 +19,17 @@ public class SpotPlayer : MonoBehaviour
 
     public int tempCounter = 0;
 
-    private bool isTrigger;
-
     void Awake()
     {
         label.text = "";
         myMaterial.color = SpotColor;
-        isTrigger = false;
+    }
+
+    void Update()
+    {
+        float currentDistanceFromPlayer = Vector3.Distance(player.position, transform.position);
+        if (currentDistanceFromPlayer < detectionRange) isPlayerInRange = true;
+        else isPlayerInRange = false;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -32,7 +39,6 @@ public class SpotPlayer : MonoBehaviour
             label.text = "!!!";
             myMaterial.color = Color.red;
             tempCounter += 1;
-            isTrigger = true;
             gameState.isTrapTrigger = true;
             gameState.alertLevel = gameState.maxAlertLevel;
             if (tempCounter == 5)

@@ -44,7 +44,7 @@ public class AlertSystem : MonoBehaviour
         // increase or decrease alert base on detecting range
         if(!gameState.isGameOver)
         {
-            if(gameState.nearestKittenDistance <= detectingRange)
+            if(gameState.isAlertIncreasing)
             {
                 gameState.alertLevel += incrementRate * currentMovementRate * Time.deltaTime;
             }

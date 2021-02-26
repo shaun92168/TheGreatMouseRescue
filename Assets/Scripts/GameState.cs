@@ -12,6 +12,7 @@ public class GameState : ScriptableObject
 
     [Header("Alert System")]
     public float nearestKittenDistance;
+    public bool isAlertIncreasing;
     public float alertLevel;
     public float maxAlertLevel;
 

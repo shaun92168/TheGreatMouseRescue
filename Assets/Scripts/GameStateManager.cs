@@ -5,6 +5,9 @@ using UnityEngine;
 public class GameStateManager : MonoBehaviour
 {
     public GameState gameState;
+    public List<GameObject> traps;
+
+    private string alertingTrap;
 
     void Start()
     {
@@ -27,6 +30,19 @@ public class GameStateManager : MonoBehaviour
         if(gameState.isGameOver)
         {
             //trigger cat, play animation
+        }
+
+        foreach (GameObject trap in traps)
+        {
+            if (trap.GetComponent<SpotPlayer>().isPlayerInRange)
+            {
+                gameState.isAlertIncreasing = true;
+                alertingTrap = trap.name;
+                Debug.Log("Alerting " + alertingTrap);
+                break;
+            }
+            else gameState.isAlertIncreasing = false;
+
         }
     }
 }
