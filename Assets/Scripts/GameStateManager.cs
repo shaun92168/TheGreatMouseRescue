@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameStateManager : MonoBehaviour
 {
@@ -30,6 +31,7 @@ public class GameStateManager : MonoBehaviour
         if(gameState.isGameOver)
         {
             //trigger cat, play animation
+            SceneManager.LoadScene("GameOver");
         }
 
         foreach (GameObject trap in traps)
