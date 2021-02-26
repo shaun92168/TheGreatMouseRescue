@@ -22,9 +22,11 @@ public class CharacterController : MonoBehaviour
     public float runSpeed;
     public float sneakSpeed;
     public float crawlSpeed;
+    private float tempSpeed;
 
     void Start()
     {
+        tempSpeed = speed;
         isPressed = false;
         rigidBody = GetComponent<Rigidbody>();
     }
@@ -34,6 +36,7 @@ public class CharacterController : MonoBehaviour
         if (playerState == 0)
         {
             transform.localRotation = Quaternion.Euler(0, 0, 0);
+            speed = tempSpeed;
             rend.GetComponent<Renderer>().material.color = Color.white;
         }
 
@@ -51,7 +54,6 @@ public class CharacterController : MonoBehaviour
         }
         if (playerState == 3)
         {
-
             transform.localRotation = Quaternion.Euler(30, 0, 0);
             speed = crawlSpeed;
             rend.GetComponent<Renderer>().material.color = Color.green;
