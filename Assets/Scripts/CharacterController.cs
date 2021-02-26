@@ -26,12 +26,8 @@ public class CharacterController : MonoBehaviour
         rigidBody = GetComponent<Rigidbody>();
     }
 
-    void FixedUpdate()
+    private void FixedUpdate()
     {
-        if (Input.GetKeyUp(KeyCode.Space) || Input.GetKeyUp(KeyCode.LeftShift) || Input.GetKeyUp(KeyCode.LeftControl))
-        {
-            playerState = 0;
-        }
         if (playerState == 0)
         {
             transform.localRotation = Quaternion.Euler(0, 0, 0);
@@ -58,48 +54,58 @@ public class CharacterController : MonoBehaviour
             speed = 3.0f;
             rend.GetComponent<Renderer>().material.color = Color.green;
         }
-
+    }
+    // Update is called once per frame
+    void Update()
+    {
         hori = Input.GetAxisRaw("Horizontal");
         vert = Input.GetAxisRaw("Vertical");
         rigidBody.velocity = new Vector3(hori * speed, 0, vert * speed);
-    }
-    void Update()
-    {
+
         if (!isPressed)
         {
-            
+            playerState = 0;
         }
 
         // Run
-        if (Input.GetKey(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             isPressed = !isPressed;
             if (isPressed)
             {
                 playerState = 1;
-                Debug.Log("this is 1");
             }
+            //playerState = 0;
         }
-       
+        if (Input.GetKeyUp(KeyCode.Space))
+        {
+            isPressed = false;
+        }
         // Sneak
-        if (Input.GetKey(KeyCode.LeftShift))
+        if (Input.GetKeyDown(KeyCode.LeftShift))
         {
             isPressed = !isPressed;
             if (isPressed)
             {
                 playerState = 2;
-                Debug.Log("this is 2");
             }
         }
+        if (Input.GetKeyUp(KeyCode.LeftShift))
+        {
+            isPressed = false;
+        }
         // Crawl
-        if (Input.GetKey(KeyCode.LeftControl))
+        if (Input.GetKeyDown(KeyCode.LeftControl))
         {
             isPressed = !isPressed;
             if (isPressed)
             {
                 playerState = 3;
-                Debug.Log("this is 3");
             }
+        }
+        if (Input.GetKeyUp(KeyCode.LeftControl))
+        {
+            isPressed = false;
         }
 
         gameState.playerState = playerState;
