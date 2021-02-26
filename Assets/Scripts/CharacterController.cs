@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CharacterController : MonoBehaviour
 {
-   // public Material[] materials;
+    // public Material[] materials;
     public Renderer rend;
     public Transform trans;
     public bool isPressed;
@@ -18,46 +18,15 @@ public class CharacterController : MonoBehaviour
     float vert;
 
     public float speed = 10.0f;
-    public GameState gameState;
 
     void Start()
     {
+        isPressed = false;
         rigidBody = GetComponent<Rigidbody>();
     }
 
-    // Update is called once per frame
-    void FixedUpdate()
+    private void FixedUpdate()
     {
-        hori = Input.GetAxisRaw("Horizontal");
-        vert = Input.GetAxisRaw("Vertical");
-        rigidBody.velocity = new Vector3(hori * speed, 0, vert * speed);
-
-        if (isPressed)
-        {
-            playerState = 0;
-        }
-
-        // Run
-        if (Input.GetKey(KeyCode.Space))
-        {
-            isPressed = !isPressed;
-            playerState = 1;
-        }
-
-        // Sneak
-        if (Input.GetKey(KeyCode.LeftShift))
-        {
-            isPressed = !isPressed;
-            playerState = 2;
-        }
-
-        // Crawl
-        if (Input.GetKey(KeyCode.LeftControl))
-        {
-            isPressed = !isPressed;
-            playerState = 3;
-        }
-
         if (playerState == 0)
         {
             transform.localRotation = Quaternion.Euler(0, 0, 0);
@@ -79,12 +48,58 @@ public class CharacterController : MonoBehaviour
         }
         if (playerState == 3)
         {
-            
+
             transform.localRotation = Quaternion.Euler(30, 0, 0);
             speed = 3.0f;
             rend.GetComponent<Renderer>().material.color = Color.green;
         }
+    }
+    // Update is called once per frame
+    void Update()
+    {
+        hori = Input.GetAxisRaw("Horizontal");
+        vert = Input.GetAxisRaw("Vertical");
+        rigidBody.velocity = new Vector3(hori * speed, 0, vert * speed);
 
-        gameState.playerState = playerState;
+        if (!isPressed)
+        {
+            playerState = 0;
+        }
+
+        // Run
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            isPressed = !isPressed;
+            if (isPressed)
+            {
+                playerState = 1;
+            }
+            //playerState = 0;
+        }
+
+        // Sneak
+        if (Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            isPressed = !isPressed;
+            if (isPressed)
+            {
+                playerState = 2;
+            }
+            //playerState = 0;
+
+        }
+
+        // Crawl
+        if (Input.GetKeyDown(KeyCode.LeftControl))
+        {
+            isPressed = !isPressed;
+            if (isPressed)
+            {
+                playerState = 3;
+            }
+            //playerState = 0;
+        }
+
+
     }
 }
