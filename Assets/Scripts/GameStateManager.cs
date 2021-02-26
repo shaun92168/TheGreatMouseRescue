@@ -34,6 +34,7 @@ public class GameStateManager : MonoBehaviour
             SceneManager.LoadScene("GameOver");
         }
 
+        // determine if the alert is increasing
         foreach (GameObject trap in traps)
         {
             if (trap.GetComponent<SpotPlayer>().isPlayerInRange)
@@ -45,6 +46,12 @@ public class GameStateManager : MonoBehaviour
             }
             else gameState.isAlertIncreasing = false;
 
+        }
+
+        // escape to quit the game
+        if (Input.GetKey("escape"))
+        {
+            Application.Quit();
         }
     }
 }
