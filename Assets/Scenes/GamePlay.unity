@@ -2054,7 +2054,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetToFollow: {fileID: 5042506006583783639}
   smoothSpeed: 0.125
-  cameraOffset: {x: 0, y: 15, z: -0.25}
+  cameraOffset: {x: 0, y: 9, z: -0.25}
 --- !u!1 &914665518
 GameObject:
   m_ObjectHideFlags: 0
@@ -4262,7 +4262,7 @@ PrefabInstance:
       objectReference: {fileID: 5042506006583783639}
     - target: {fileID: 9035670017919674087, guid: cbcd97a549c71034c84eabd8e6ad62ba, type: 3}
       propertyPath: detectionRange
-      value: 5
+      value: 5.5
       objectReference: {fileID: 0}
     - target: {fileID: 9035670017919674088, guid: cbcd97a549c71034c84eabd8e6ad62ba, type: 3}
       propertyPath: m_Name
