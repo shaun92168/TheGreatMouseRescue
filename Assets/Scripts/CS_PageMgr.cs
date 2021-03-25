@@ -8,7 +8,9 @@ public class CS_PageMgr : MonoBehaviour
 {
     public Image PgImageObject;
     public TextMeshProUGUI PageTextObject;
-    
+    public Button NextButton;
+    public Button PreviousButton;
+
     public List<Sprite> PageImages = new List<Sprite>();
     public List<int> PerPageLinesOfText = new List<int>();
     public List<string> PageTextLines = new List<string>();
@@ -180,13 +182,43 @@ public class CS_PageMgr : MonoBehaviour
 
     public void AnimationEvent(int eventID)
     {
-        if (eventID == 1)
+        switch (eventID)
         {
-            NextPageAsset();
-        }
-        else if (eventID == 2)
-        {
-            PrevPageAsset();
+            case 1: // Animation start
+                // Disable buttons
+                if (NextButton != null)
+                {
+                    NextButton.interactable = false;
+                }
+                if (PreviousButton != null)
+                {
+                    PreviousButton.interactable = false;
+                }
+                break;
+
+            case 2: // Animation stop
+                // Eanble buttons
+                if (NextButton != null)
+                {
+                    NextButton.interactable = true;
+                }
+                if (PreviousButton != null)
+                {
+                    PreviousButton.interactable = true;
+                }
+                break;
+
+            case 3: // Next Text
+                NextPageAsset();
+                break;
+
+            case 4: // Previous Text
+                PrevPageAsset();
+                break;
+
+            default:
+                Debug.LogWarning("Unsupportted Animation Event ID!");
+                break;
         }
     }
 
