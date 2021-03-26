@@ -586,8 +586,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 758e2a56ed5d9924f86f7dab884e58a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NextSceneName: GamePlay
-  PrevSceneName: StoryScene
+  NextSceneName: StoryScene_Act3
+  PrevSceneName: GamePlay
 --- !u!114 &646882702
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -602,20 +602,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PgImageObject: {fileID: 0}
   PageTextObject: {fileID: 676744554}
+  NextButton: {fileID: 178973412}
+  PreviousButton: {fileID: 531841572}
   PageImages:
   - {fileID: 0}
   PerPageLinesOfText: 08000000
   PageTextLines:
-  - "Seeing his sister Sam calls out in desperation \u201CLindsay\u201D but is too
-    far to be heard."
+  - "Seeing his sister Sam calls out in desperation \u201CLindsay\u201D but she is
+    too far to hear."
   - "Sam takes control, \u201CKarl, here is what we are going to do...\u201D"
-  - "\u201C...We will go up the bookshelf..\""
-  - '"..jump across to the chair..."'
-  - '"Then across the table to the back chair..."'
-  - '"...from there we can jump to the hutch with Lindsay''s cage on it."'
+  - "\u201CWe will go up the bookshelf\u2026\""
+  - "\"jump across to the chair\u2026\""
+  - "\"Then across the table to the back chair\u2026\""
+  - "\"from there we can jump to the hutch with Lindsay's cage on it\u2026\""
   - '"Then we free her, get out of here and back home."'
   - But before Karl can answer Sam takes off to climb the shelves.
-  AnimTakeContolOnTextLine: 0200000002000000
+  AnimTakeContolOnTextLine: 0100000001000000
   Animators:
   - {fileID: 1890908127}
   - {fileID: 915887660}
@@ -956,7 +958,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0.00017895854, y: 0.000057529072}
   m_SizeDelta: {x: 5526.1826, y: 3050.025}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &915887657
@@ -981,7 +983,7 @@ MonoBehaviour:
       m_Calls: []
   m_Sprite: {fileID: 21300000, guid: 34acb25aa5cee58419c736cea2a94fbd, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
