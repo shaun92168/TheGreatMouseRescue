@@ -11,7 +11,7 @@ public class GameOverScene : MonoBehaviour
     }
     public void BacktoStory()
     {
-        SceneManager.LoadScene("StoryScene");
+        SceneManager.LoadScene("StoryScene_Act1");
     }
 
     public void ExitGame()
