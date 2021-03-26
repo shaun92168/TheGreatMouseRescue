@@ -57,6 +57,7 @@ public class SB_PageMgr : MonoBehaviour
 
         if (currPgTextIndex < linesPerPage - 1)
         {
+            FindObjectOfType<AudioManager>().Play("CloseMenu");
             PageTextObject.text = PageTextLines[++currPgTextIndex];
         }
         else
@@ -74,7 +75,12 @@ public class SB_PageMgr : MonoBehaviour
 
         if (--currPgTextIndex >= 0)
         {
+            FindObjectOfType<AudioManager>().Play("CloseMenu");
             PageTextObject.text = PageTextLines[currPgTextIndex];
+        }
+        else
+        {
+            currPgTextIndex = 0;
         }
 
         for (int i = 0; i < PerPageLinesOfText.Count; i++)
@@ -96,7 +102,13 @@ public class SB_PageMgr : MonoBehaviour
         // Next Page?
         if (SetNextTextString() == true)
         {
-            currPageIndex++;
+            FindObjectOfType<AudioManager>().Play("NextPage");
+
+            // Clamp so current page index is never great than total used
+            if (++currPageIndex > PageImages.Count)
+            {
+                currPageIndex = PageImages.Count;
+            }
 
             // If current is last page do skip action (next Scene)
             if (currPageIndex == PageImages.Count)
@@ -122,6 +134,7 @@ public class SB_PageMgr : MonoBehaviour
         // Previous Page?
         if (SetPrevTextString() == true)
         {
+            FindObjectOfType<AudioManager>().Play("NextPage");
             currPageIndex--;
 
             // If current is first page do nothing
@@ -129,6 +142,7 @@ public class SB_PageMgr : MonoBehaviour
             {
                 // Last image so skip to cut scene 1
                 GetComponent<SceneMgr>().PrevScene();
+                currPageIndex = 0;
             }
             else
             {
@@ -136,6 +150,13 @@ public class SB_PageMgr : MonoBehaviour
                 {
                     PgImageObject.sprite = PageImages[currPageIndex];
                 }
+
+                currPgTextIndex = 0;
+                for (int i = 0; i <= currPageIndex && i < PerPageLinesOfText.Count; i++)
+                {
+                    currPgTextIndex += PerPageLinesOfText[i];
+                }
+
                 SetPrevTextString();
             }
         }
