@@ -58,7 +58,7 @@ public class EventJump : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.O) && canJump)
         {
-            FindObjectOfType<AudioManager>().Play("jump");
+            //FindObjectOfType<AudioManager>().Play("jump");
 
             // Attempt for Lerp
             StartCoroutine(LerpPosition(positionToMoveTo, 2));
