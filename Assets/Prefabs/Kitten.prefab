@@ -414,7 +414,7 @@ GameObject:
   - component: {fileID: 8704184857807415043}
   - component: {fileID: 6890511680686481614}
   m_Layer: 0
-  m_Name: Cat_White
+  m_Name: Kitten
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
