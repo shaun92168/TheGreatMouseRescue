@@ -469,7 +469,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  gameState: {fileID: 0}
+  gameState: {fileID: 11400000, guid: 82718da303039c540b5aedada1cd38af, type: 2}
   alertBar: {fileID: 1726235034085581466}
   detectionRange: 3.6
   isPlayerInRange: 0
