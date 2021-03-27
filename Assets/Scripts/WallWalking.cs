@@ -28,7 +28,7 @@ public class WallWalking : MonoBehaviour
 
     private Vector3 wallDir; //The direction to the wall
     [Header("Controller")]
-    public MouseUserController controller; // Your Controller
+    //public MouseUserController controller; // Your Controller
 
     public Rigidbody rb; // The rigidbody
 
@@ -82,7 +82,7 @@ public class WallWalking : MonoBehaviour
         if (!isWallRunning)
         {
             rb.AddForce(Vector3.up * upForce, ForceMode.Impulse);
-            rb.AddForce(controller.transform.forward * forwardForce, ForceMode.Impulse);
+            //rb.AddForce(controller.transform.forward * forwardForce, ForceMode.Impulse);
             Debug.Log("Start Wall Run");
         }
 

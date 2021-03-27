@@ -34,8 +34,8 @@ public class SpotPlayer : MonoBehaviour
 
     void Awake()
     {
-        label.text = "";
-        myMaterial.color = SpotColor;
+      /*  label.text = "";
+        myMaterial.color = SpotColor;*/
     }
 
     // set up variables
