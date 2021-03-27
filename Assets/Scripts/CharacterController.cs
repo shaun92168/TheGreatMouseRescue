@@ -15,6 +15,7 @@ public class CharacterController : MonoBehaviour
     public GameState gameState;
 
     Rigidbody rigidBody;
+    MouseCharacter mouseCharacter;
     float hori;
     float vert;
 
@@ -29,42 +30,51 @@ public class CharacterController : MonoBehaviour
         tempSpeed = speed;
         isPressed = false;
         rigidBody = GetComponent<Rigidbody>();
+        mouseCharacter = GetComponent<MouseCharacter>();
     }
 
     private void FixedUpdate()
     {
+        /*mouseAnimator.SetFloat("Forward", forwardSpeed);
+        mouseAnimator.SetFloat("Turn", turnSpeed);*/
         if (playerState == 0)
         {
-            transform.localRotation = Quaternion.Euler(0, 0, 0);
+
             speed = tempSpeed;
             rend.GetComponent<Renderer>().material.color = Color.white;
         }
 
         if (playerState == 1)
         {
-            transform.localRotation = Quaternion.Euler(80, 0, 0);
+            //mouseCharacter.Run();
             speed = runSpeed;
             rend.GetComponent<Renderer>().material.color = Color.red;
         }
         if (playerState == 2)
         {
-            transform.localRotation = Quaternion.Euler(10, 0, 0);
+            //mouseCharacter.Sneak();
             speed = sneakSpeed;
             rend.GetComponent<Renderer>().material.color = Color.yellow;
         }
         if (playerState == 3)
         {
-            transform.localRotation = Quaternion.Euler(30, 0, 0);
+            //mouseCharacter.Crawl();
             speed = crawlSpeed;
             rend.GetComponent<Renderer>().material.color = Color.green;
         }
+        
     }
     // Update is called once per frame
     void Update()
     {
-        hori = Input.GetAxisRaw("Horizontal");
+
+        /*hori = Input.GetAxisRaw("Horizontal");
         vert = Input.GetAxisRaw("Vertical");
         rigidBody.velocity = new Vector3(hori * speed, 0, vert * speed);
+*/
+        vert = Input.GetAxis("Vertical");
+        mouseCharacter.turnSpeed = Input.GetAxis("Horizontal");
+        rigidBody.velocity = new Vector3(0, 0, vert * speed);
 
         if (!isPressed)
         {
