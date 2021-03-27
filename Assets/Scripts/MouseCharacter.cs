@@ -19,6 +19,7 @@ public class MouseCharacter : MonoBehaviour
     //public float jumpStartTime = 0f;
     //public float maxWalkSpeed = 1f;
 
+    
     void Start()
     {
         mouseAnimator = GetComponent<Animator>();
@@ -73,10 +74,7 @@ public class MouseCharacter : MonoBehaviour
         mouseAnimator.SetFloat("Forward", Forward, 0.1f, Time.deltaTime);
         mouseAnimator.SetFloat("Turn", Turn, 0.1f, Time.deltaTime);
     }
-    void FixedUpdate()
-    {
 
-    }
 
     public void Run()
     {

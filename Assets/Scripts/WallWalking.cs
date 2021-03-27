@@ -14,6 +14,10 @@ public class WallWalking : MonoBehaviour
     public float forwardForce = 12;
     public bool isWallLeft;
     public bool isWallRight;
+    public Transform target;
+    public float t;
+    public float forceUpward;
+    public float force;
 
     [Header("Camera")]
   
@@ -41,8 +45,9 @@ public class WallWalking : MonoBehaviour
 
     private void Update()
     {
+
         WallRunning();
-        if(cam != null)
+       /* if(cam != null)
         {
            
             if (Physics.Raycast(transform.position, transform.right, rayDistance) && isWallRunning)
@@ -67,7 +72,7 @@ public class WallWalking : MonoBehaviour
             
 
             
-        }
+        }*/
     }
 
 
@@ -89,7 +94,14 @@ public class WallWalking : MonoBehaviour
         if (isWallRunning)
         {
             rb.AddForce(-wallDir * WallForce * Time.deltaTime); // Push the player on the wall.
-            rb.AddForce(Vector3.up * constantUpForce * Time.deltaTime); // Apply a constant force to not let the player fall.
+            //rb.AddForce(Vector3.up * constantUpForce * Time.deltaTime); // Apply a constant force to not let the player fall.
+            Vector3 f = target.position - transform.position;
+            forceUpward = target.position.y + 10f;
+            Vector3 upForceVector = new Vector3(0f, forceUpward, 0f);
+
+            f = f.normalized;
+            f = f * force;
+            rb.AddForce(f);
         }
     }
 
