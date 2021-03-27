@@ -587,7 +587,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NextSceneName: StoryScene_Act3
-  PrevSceneName: GamePlay
+  PrevSceneName: GamePlay_2
 --- !u!114 &646882702
 MonoBehaviour:
   m_ObjectHideFlags: 0

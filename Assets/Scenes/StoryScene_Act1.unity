@@ -592,7 +592,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NextSceneName: CutScene_1
-  PrevSceneName: StoryScene
+  PrevSceneName: StoryScene_Act1
 --- !u!114 &646882701
 MonoBehaviour:
   m_ObjectHideFlags: 0
