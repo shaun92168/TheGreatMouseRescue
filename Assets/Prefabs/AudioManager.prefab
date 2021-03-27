@@ -224,3 +224,57 @@ MonoBehaviour:
     loop: 0
     playOnAwake: 0
     source: {fileID: 0}
+  - name: Theme1
+    clip: {fileID: 8300000, guid: bcf507c417380964d9ac90d3b225ff43, type: 3}
+    volume: 0.5
+    volumeVariance: 1
+    pitch: 1
+    pitchVariance: 0
+    loop: 1
+    playOnAwake: 0
+    source: {fileID: 0}
+  - name: Theme2
+    clip: {fileID: 8300000, guid: 75fe8fa96559ca8489a24f5337750858, type: 3}
+    volume: 0.5
+    volumeVariance: 1
+    pitch: 1
+    pitchVariance: 0
+    loop: 1
+    playOnAwake: 0
+    source: {fileID: 0}
+  - name: Theme3
+    clip: {fileID: 8300000, guid: 78ab92c0a7d72d24386809799a95a24c, type: 3}
+    volume: 0.5
+    volumeVariance: 1
+    pitch: 1
+    pitchVariance: 0
+    loop: 1
+    playOnAwake: 0
+    source: {fileID: 0}
+  - name: Theme4
+    clip: {fileID: 8300000, guid: b930050db5b43d942a6ceb2219a66a85, type: 3}
+    volume: 0.5
+    volumeVariance: 1
+    pitch: 1
+    pitchVariance: 0
+    loop: 1
+    playOnAwake: 0
+    source: {fileID: 0}
+  - name: Theme5
+    clip: {fileID: 8300000, guid: 47f1d31d70aea244a926d1db54499c16, type: 3}
+    volume: 0.5
+    volumeVariance: 1
+    pitch: 1
+    pitchVariance: 0
+    loop: 1
+    playOnAwake: 0
+    source: {fileID: 0}
+  - name: Theme6
+    clip: {fileID: 8300000, guid: 98ef40fc80e6d5b4ea3eb66e3ba54488, type: 3}
+    volume: 0.5
+    volumeVariance: 1
+    pitch: 1
+    pitchVariance: 0
+    loop: 1
+    playOnAwake: 0
+    source: {fileID: 0}
