@@ -16,6 +16,9 @@ public class GameStateManager : MonoBehaviour
         gameState.isTrapTrigger = false;
         gameState.isAlertFull = false;
         gameState.isGameOver = false;
+
+
+
     }
 
     void Update()

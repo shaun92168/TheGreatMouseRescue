@@ -1,6 +1,7 @@
 ﻿using UnityEngine.Audio;
 using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class AudioManager : MonoBehaviour
 {
@@ -18,7 +19,21 @@ public class AudioManager : MonoBehaviour
 	}
 	void Start()
     {
-		Play("Theme1");
+		//Play("Theme1");
+
+		if (SceneManager.GetActiveScene().name == "GamePlay_1")
+		{
+			FindObjectOfType<AudioManager>().Play("Theme1");
+		}
+		if (SceneManager.GetActiveScene().name == "GamePlay_2")
+		{
+			FindObjectOfType<AudioManager>().Play("Theme2");
+		}
+
+		if (SceneManager.GetActiveScene().name == "GamePlay_3")
+		{
+			FindObjectOfType<AudioManager>().Play("Theme3");
+		}
 	}
 
 	public void Play(string sound)
