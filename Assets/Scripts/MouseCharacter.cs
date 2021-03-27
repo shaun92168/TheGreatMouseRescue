@@ -78,20 +78,20 @@ public class MouseCharacter : MonoBehaviour
 
     public void Run()
     {
-        speed = 2f;
+        speed = 6.5f;
     }
 
     public void Sneak()
     {
-        speed = .5f;
+        speed = 3f;
     }
     public void Crawl()
     {
-        speed = .1f;
+        speed = 2f;
     }
 
     public void Walk()
     {
-        speed = 1f;
+        speed = 5f;
     }
 }
