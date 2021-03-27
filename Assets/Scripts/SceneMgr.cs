@@ -40,9 +40,12 @@ public class SceneMgr : MonoBehaviour
 
     void ChangeSceneTo(string NewScene)
     {
-        SceneManager.LoadScene(NewScene);
+//        SceneManager.LoadScene(NewScene, LoadSceneMode.Additive);
+        SceneManager.LoadSceneAsync(NewScene);
+        UnityEngine.SceneManagement.Scene aScene;
+        aScene = SceneManager.GetSceneByName(NewScene);
 
-        if (NewScene.Length != 0 || SceneManager.GetActiveScene().name != NewScene)
+        if (NewScene.Length == 0 || aScene.IsValid() == false)
         {
             Debug.LogFormat("Scene name does not exist! '{0}'", NewScene);
         }
