@@ -61,6 +61,7 @@ public class CS_PageMgr : MonoBehaviour
 
         if (currPgTextIndex < linesPerPage - 1)
         {
+            FindObjectOfType<AudioManager>().Play("CloseMenu");
             PageTextObject.text = PageTextLines[++currPgTextIndex];
         }
         else
@@ -78,6 +79,7 @@ public class CS_PageMgr : MonoBehaviour
 
         if (--currPgTextIndex >= 0)
         {
+            FindObjectOfType<AudioManager>().Play("CloseMenu");
             PageTextObject.text = PageTextLines[currPgTextIndex];
         }
 

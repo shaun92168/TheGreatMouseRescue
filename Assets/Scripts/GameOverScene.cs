@@ -7,7 +7,7 @@ public class GameOverScene : MonoBehaviour
 {
     public void Retry()
     {
-        SceneManager.LoadScene("GamePlay");
+        SceneManager.LoadScene("GamePlay_1");
     }
     public void BacktoStory()
     {
