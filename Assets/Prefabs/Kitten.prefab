@@ -429,7 +429,7 @@ Transform:
   m_GameObject: {fileID: 1619733447900260698}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -17.946644, y: 0.050001144, z: -5.025882}
-  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_Children:
   - {fileID: 8800756301595738449}
   - {fileID: 6120464472712837083}
@@ -471,7 +471,7 @@ MonoBehaviour:
   player: {fileID: 0}
   gameState: {fileID: 11400000, guid: 82718da303039c540b5aedada1cd38af, type: 2}
   alertBar: {fileID: 1726235034085581466}
-  detectionRange: 3.6
+  detectionRange: 6
   isPlayerInRange: 0
   maxAlertLevel: 100
   alertLevel: 0
