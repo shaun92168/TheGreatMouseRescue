@@ -10,173 +10,90 @@ public class MouseCharacter : MonoBehaviour
     public bool isGrounded = true;
     public float jumpSpeed = 2f;
     Rigidbody mouseRigid;
+    public float speed = 4f;
+
+    // Speed for animation
     public float forwardSpeed;
     public float turnSpeed;
-    public float speed = 1f;
-    public float jumpStartTime = 0f;
-    public float maxWalkSpeed = 1f;
+    public float walkMode = 1f;
+    //public float jumpStartTime = 0f;
+    //public float maxWalkSpeed = 1f;
 
-    private bool isPressed;
-    // 0 = Stand, 1 = Run , 2 = Sneak, 3 = Crawl
-    public int playerState = 0;
-    public GameState gameState;
-
-    float hori;
-    float vert;
-
-    public float runSpeed = 1f;
-    public float sneakSpeed = 1f;
-    public float crawlSpeed = 1f;
-    private float tempSpeed = 1f;
     void Start()
     {
         mouseAnimator = GetComponent<Animator>();
         mouseRigid = GetComponent<Rigidbody>();
-        tempSpeed = speed;
-        isPressed = false;
     }
 
+    void Update()
+    {
+        //Walk();
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Run();
+        }
+        if (Input.GetKeyUp(KeyCode.Space))
+        {
+            Walk();
+        }
+
+        if (Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            Sneak();
+        }
+        if (Input.GetKeyUp(KeyCode.LeftShift))
+        {
+            Walk();
+        }
+
+        if (Input.GetKeyDown(KeyCode.LeftControl))
+        {
+            Crawl();
+        }
+        if (Input.GetKeyUp(KeyCode.LeftControl))
+        {
+            Walk();
+        }
+
+        // Movement
+        float vertical = Input.GetAxis("Vertical");
+        float horizontal = Input.GetAxis("Horizontal");
+        Vector3 movement = new Vector3(horizontal * speed, 0, vertical * speed);
+        if (movement.magnitude > 0)
+        {
+            movement.Normalize();
+            movement *= speed * Time.deltaTime;
+            transform.Translate(movement, Space.World);
+        }
+
+        // Animating
+        float Forward = Vector3.Dot(movement.normalized, transform.forward);
+        float Turn = Vector3.Dot(movement.normalized, transform.right);
+
+        mouseAnimator.SetFloat("Forward", Forward, 0.1f, Time.deltaTime);
+        mouseAnimator.SetFloat("Turn", Turn, 0.1f, Time.deltaTime);
+    }
     void FixedUpdate()
     {
-        CheckGroundStatus();
-        Move();
-        jumpStartTime += Time.deltaTime;
-        maxWalkSpeed = Mathf.Lerp(maxWalkSpeed, speed, Time.deltaTime);
 
-        // 0 = Stand, 1 = Run , 2 = Sneak, 3 = Crawl
-        if (playerState == 0)
-        {
-            speed = tempSpeed;
-            Debug.Log("state: 0 stand");
-        }
-
-        if (playerState == 1)
-        {
-            speed = runSpeed;
-            Debug.Log("state: 1 run");
-        }
-        if (playerState == 2)
-        {
-            speed = sneakSpeed;
-            Debug.Log("state: 2 sneak");
-        }
-        if (playerState == 3)
-        {
-            speed = crawlSpeed;
-            Debug.Log("state: 3 crawl");
-        }
     }
 
-    public void Attack()
+    public void Run()
     {
-        mouseAnimator.SetTrigger("Attack");
-
+        speed = 2f;
     }
 
-    public void Hit()
+    public void Sneak()
     {
-        mouseAnimator.SetTrigger("Hit");
-        speed = crawlSpeed;
-        playerState = 3;
+        speed = .5f;
     }
-
     public void Crawl()
     {
-        mouseAnimator.SetTrigger("Crawl");
-        speed = crawlSpeed;
-        playerState = 3;
+        speed = .1f;
     }
-
-
-    public void Sleep()
-    {
-        mouseAnimator.SetBool("IsSleeping", true);
-    }
-
-    public void WakeUp()
-    {
-        mouseAnimator.SetBool("IsSleeping", false);
-    }
-
-    public void EatStart()
-    {
-        mouseAnimator.SetBool("IsEating", true);
-    }
-    public void EatEnd()
-    {
-        mouseAnimator.SetBool("IsEating", false);
-    }
-
-
-
-    public void Gallop()
-    {
-        speed = 1f * tempSpeed;
-    }
-
-
 
     public void Walk()
     {
-        speed = .5f * tempSpeed;
-    }
-
-    public void Jump()
-    {
-        if (isGrounded)
-        {
-            mouseAnimator.SetTrigger("Jump");
-            jumpStart = true;
-            jumpStartTime = 0f;
-            isGrounded = false;
-            mouseAnimator.SetBool("IsGrounded", false);
-        }
-    }
-
-    void CheckGroundStatus()
-    {
-        RaycastHit hitInfo;
-        isGrounded = Physics.Raycast(transform.position + (transform.up * groundCheckOffset), Vector3.down, out hitInfo, groundCheckDistance);
-
-        if (jumpStart)
-        {
-            if (jumpStartTime > .25f)
-            {
-                jumpStart = false;
-                mouseRigid.AddForce((transform.up + transform.forward * forwardSpeed) * jumpSpeed, ForceMode.Impulse);
-                mouseAnimator.applyRootMotion = false;
-                mouseAnimator.SetBool("IsGrounded", false);
-            }
-        }
-
-        if (isGrounded && !jumpStart && jumpStartTime > .5f)
-        {
-            mouseAnimator.applyRootMotion = true;
-            mouseAnimator.SetBool("IsGrounded", true);
-        }
-        else
-        {
-            if (!jumpStart)
-            {
-                mouseAnimator.applyRootMotion = false;
-                mouseAnimator.SetBool("IsGrounded", false);
-            }
-        }
-    }
-
-    public void Move()
-    {
-        mouseAnimator.SetFloat("Forward", forwardSpeed);
-        mouseAnimator.SetFloat("Turn", turnSpeed);
-    }
-
-    // Testing entering certain climbable objects
-    private void OnTriggerEnter(Collider other)
-    {
-        /*if (other.CompareTag("Climbable"))
-        {
-            //
-
-        }*/
+        speed = 1f;
     }
 }
