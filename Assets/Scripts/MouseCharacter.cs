@@ -258,13 +258,13 @@ public class MouseCharacter : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.name == "Trigger_1" && gameState.activeLevel == 1)
+        if (collision.gameObject.name == "Trigger_1")
         {
             gameState.level1Complete = true;
             Debug.Log("Level 1 Complete");
         }
 
-        if (collision.gameObject.name == "Trigger_2" && gameState.activeLevel == 2)
+        if (collision.gameObject.name == "Trigger_2")
         {
             gameState.level2Complete = true;
             Debug.Log("Level 2 Complete");
