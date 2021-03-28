@@ -1,4 +1,4 @@
-﻿/*using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -35,8 +35,8 @@ public class CharacterController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        *//*mouseAnimator.SetFloat("Forward", forwardSpeed);
-        mouseAnimator.SetFloat("Turn", turnSpeed);*//*
+        /*mouseAnimator.SetFloat("Forward", forwardSpeed);
+        mouseAnimator.SetFloat("Turn", turnSpeed);*/
         if (playerState == 0)
         {
 
@@ -68,10 +68,10 @@ public class CharacterController : MonoBehaviour
     void Update()
     {
 
-        *//*hori = Input.GetAxisRaw("Horizontal");
+        /*hori = Input.GetAxisRaw("Horizontal");
         vert = Input.GetAxisRaw("Vertical");
         rigidBody.velocity = new Vector3(hori * speed, 0, vert * speed);
-*//*
+*/
         vert = Input.GetAxis("Vertical");
         mouseCharacter.turnSpeed = Input.GetAxis("Horizontal");
         rigidBody.velocity = new Vector3(0, 0, vert * speed);
@@ -124,4 +124,3 @@ public class CharacterController : MonoBehaviour
         gameState.playerState = playerState;
     }
 }
-*/
