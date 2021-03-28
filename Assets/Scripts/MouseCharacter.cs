@@ -215,20 +215,20 @@ public class MouseCharacter : MonoBehaviour
     {
         moveSpeed = 6.5f;
         gameState.playerState = 1;
-        FindObjectOfType<AudioManager>().Play("MouseRunning");
+        FindObjectOfType<AudioManager>().Play("Running2");
     }
 
     public void Sneak()
     {
         moveSpeed = 3f;
         gameState.playerState = 2;
-        FindObjectOfType<AudioManager>().Play("Sneak");
+        FindObjectOfType<AudioManager>().Play("Sneak3");
     }
     public void Crawl()
     {
         moveSpeed = 2f;
         gameState.playerState = 3;
-        FindObjectOfType<AudioManager>().Play("Sneak");
+        FindObjectOfType<AudioManager>().Play("Sneak2");
     }
 
     public void Walk()

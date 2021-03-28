@@ -278,3 +278,39 @@ MonoBehaviour:
     loop: 1
     playOnAwake: 0
     source: {fileID: 0}
+  - name: Theme6
+    clip: {fileID: 8300000, guid: 98ef40fc80e6d5b4ea3eb66e3ba54488, type: 3}
+    volume: 0.5
+    volumeVariance: 1
+    pitch: 1
+    pitchVariance: 0
+    loop: 1
+    playOnAwake: 0
+    source: {fileID: 0}
+  - name: Running2
+    clip: {fileID: 8300000, guid: 4a4f5c6c165c0604fbe7b1de6084c5a9, type: 3}
+    volume: 0.5
+    volumeVariance: 1
+    pitch: 1
+    pitchVariance: 0
+    loop: 1
+    playOnAwake: 0
+    source: {fileID: 0}
+  - name: Sneak2
+    clip: {fileID: 8300000, guid: 3076ea180f9269c4885707b396bf9d1e, type: 3}
+    volume: 0.5
+    volumeVariance: 1
+    pitch: 1
+    pitchVariance: 0
+    loop: 1
+    playOnAwake: 0
+    source: {fileID: 0}
+  - name: Sneak3
+    clip: {fileID: 8300000, guid: 8aed73fcf81354749b4093af4aa56298, type: 3}
+    volume: 0.5
+    volumeVariance: 1
+    pitch: 1
+    pitchVariance: 0
+    loop: 1
+    playOnAwake: 0
+    source: {fileID: 0}
