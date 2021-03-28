@@ -16,8 +16,10 @@ public class GameStateManager : MonoBehaviour
         gameState.isTrapTrigger = false;
         gameState.isAlertFull = false;
         gameState.isGameOver = false;
-
-
+        gameState.level1Complete = false;
+        gameState.level2Complete = false;
+        gameState.level3Complete = false;
+        gameState.activeLevel = 1;
 
     }
 
@@ -41,6 +43,13 @@ public class GameStateManager : MonoBehaviour
         if (Input.GetKey("escape"))
         {
             SceneManager.LoadScene("GameOver");
+        }
+
+        if (gameState.level1Complete)
+        {
+            gameState.activeLevel = 2;
+            SceneManager.LoadScene("CutScene_2");
+            gameState.level1Complete = false;
         }
     }
 }

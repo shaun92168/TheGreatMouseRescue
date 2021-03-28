@@ -9,6 +9,10 @@ public class GameState : ScriptableObject
     public bool isAlertFull;
     public bool isTrapTrigger;
     public bool isGameOver;
+    public bool level1Complete;
+    public bool level2Complete;
+    public bool level3Complete;
+    public int activeLevel;
 
     [Header("Alert System")]
     public float nearestKittenDistance;

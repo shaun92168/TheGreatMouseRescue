@@ -75,6 +75,7 @@ public class MouseCharacter : MonoBehaviour
 
         mouseAnimator.SetFloat("Forward", Forward, 0.1f, Time.deltaTime);
         mouseAnimator.SetFloat("Turn", Turn, 0.1f, Time.deltaTime);
+
     }
 
 
@@ -99,5 +100,14 @@ public class MouseCharacter : MonoBehaviour
     {
         speed = 5f;
         gameState.playerState = 0;
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.name == "Trigger_1")
+        {
+            gameState.level1Complete = true;
+            Debug.Log("Level 1 Complete");
+        }
     }
 }
