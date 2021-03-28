@@ -87,6 +87,7 @@ public class TrapController : MonoBehaviour
         else
         {
             alertBar.SetActive(true);
+            FindObjectOfType<AudioManager>().Play("CloserToTrap");
         }
     }
 
@@ -97,6 +98,7 @@ public class TrapController : MonoBehaviour
             gameState.isTrapTrigger = true;
             alertLevel = maxAlertLevel;
             SceneManager.LoadScene("GameOver");
+            FindObjectOfType<AudioManager>().Play("TrapActive");
         }
     }
 }

@@ -99,6 +99,26 @@ public class MouseCharacter : MonoBehaviour
 
     void Update()
     {
+        if (gameState.playerState == 0)
+        {
+            FindObjectOfType<AudioManager>().Play("MouseRunning");
+            FindObjectOfType<AudioManager>().Stop("Running2");
+            FindObjectOfType<AudioManager>().Stop("Sneak3");
+            FindObjectOfType<AudioManager>().Stop("Sneak3");
+
+        }
+        if (gameState.playerState == 1)
+        {
+            FindObjectOfType<AudioManager>().Play("Running2");
+        }
+        if (gameState.playerState == 2)
+        {
+            FindObjectOfType<AudioManager>().Play("Sneak3");
+        }
+        if (gameState.playerState == 3)
+        {
+            FindObjectOfType<AudioManager>().Play("Sneak2");
+        }
 
         // jump code - jump to wall or simple jump
         if (jumping) return; // abort Update while jumping to a wall
@@ -215,27 +235,25 @@ public class MouseCharacter : MonoBehaviour
     {
         moveSpeed = 6.5f;
         gameState.playerState = 1;
-        FindObjectOfType<AudioManager>().Play("Running2");
     }
 
     public void Sneak()
     {
         moveSpeed = 3f;
         gameState.playerState = 2;
-        FindObjectOfType<AudioManager>().Play("Sneak3");
     }
     public void Crawl()
     {
         moveSpeed = 2f;
         gameState.playerState = 3;
-        FindObjectOfType<AudioManager>().Play("Sneak2");
+
     }
 
     public void Walk()
     {
         moveSpeed = 5f;
         gameState.playerState = 0;
-        FindObjectOfType<AudioManager>().Play("CatWalking");
+
     }
 
     private void OnCollisionEnter(Collision collision)

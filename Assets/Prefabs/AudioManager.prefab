@@ -46,7 +46,7 @@ MonoBehaviour:
   sounds:
   - name: Alert
     clip: {fileID: 8300000, guid: 60c94dd58bccb8b41a8e482e5b1b5e23, type: 3}
-    volume: 0.5
+    volume: 0.2
     volumeVariance: 1
     pitch: 1
     pitchVariance: 0
@@ -82,7 +82,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Cat_Mew
     clip: {fileID: 8300000, guid: 2029952a85d125f4e86ca087452cc0bc, type: 3}
-    volume: 0.5
+    volume: 1
     volumeVariance: 1
     pitch: 1
     pitchVariance: 0
@@ -109,11 +109,11 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: MouseRunning
     clip: {fileID: 8300000, guid: 92c379f2ceee6094a9037a97fb780cef, type: 3}
-    volume: 0.5
+    volume: 1
     volumeVariance: 1
     pitch: 1
     pitchVariance: 0
-    loop: 0
+    loop: 1
     playOnAwake: 0
     source: {fileID: 0}
   - name: NoticingSound
@@ -149,7 +149,7 @@ MonoBehaviour:
     volumeVariance: 1
     pitch: 1
     pitchVariance: 0
-    loop: 0
+    loop: 1
     playOnAwake: 0
     source: {fileID: 0}
   - name: MouseSound
@@ -199,7 +199,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: TrapActive
     clip: {fileID: 8300000, guid: f07734a5db48f0e4182f520f2aa5e68d, type: 3}
-    volume: 0.5
+    volume: 0.4
     volumeVariance: 1
     pitch: 1
     pitchVariance: 0
@@ -226,7 +226,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Theme1
     clip: {fileID: 8300000, guid: bcf507c417380964d9ac90d3b225ff43, type: 3}
-    volume: 0.2
+    volume: 0
     volumeVariance: 1
     pitch: 1
     pitchVariance: 0
@@ -235,7 +235,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Theme2
     clip: {fileID: 8300000, guid: 75fe8fa96559ca8489a24f5337750858, type: 3}
-    volume: 0.2
+    volume: 0.1
     volumeVariance: 1
     pitch: 1
     pitchVariance: 0
@@ -244,7 +244,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Theme3
     clip: {fileID: 8300000, guid: 78ab92c0a7d72d24386809799a95a24c, type: 3}
-    volume: 0.2
+    volume: 0.1
     volumeVariance: 1
     pitch: 1
     pitchVariance: 0
@@ -253,7 +253,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Theme4
     clip: {fileID: 8300000, guid: b930050db5b43d942a6ceb2219a66a85, type: 3}
-    volume: 0.2
+    volume: 0.1
     volumeVariance: 1
     pitch: 1
     pitchVariance: 0
@@ -262,7 +262,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Theme5
     clip: {fileID: 8300000, guid: 47f1d31d70aea244a926d1db54499c16, type: 3}
-    volume: 0.2
+    volume: 0.1
     volumeVariance: 1
     pitch: 1
     pitchVariance: 0
@@ -271,16 +271,16 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Theme6
     clip: {fileID: 8300000, guid: 98ef40fc80e6d5b4ea3eb66e3ba54488, type: 3}
-    volume: 0.2
+    volume: 0.1
     volumeVariance: 1
     pitch: 1
     pitchVariance: 0
     loop: 1
     playOnAwake: 0
     source: {fileID: 0}
-  - name: Theme6
+  - name: Theme7
     clip: {fileID: 8300000, guid: 98ef40fc80e6d5b4ea3eb66e3ba54488, type: 3}
-    volume: 0.5
+    volume: 0.1
     volumeVariance: 1
     pitch: 1
     pitchVariance: 0
@@ -289,7 +289,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Running2
     clip: {fileID: 8300000, guid: 4a4f5c6c165c0604fbe7b1de6084c5a9, type: 3}
-    volume: 0.5
+    volume: 0.7
     volumeVariance: 1
     pitch: 1
     pitchVariance: 0
@@ -298,7 +298,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Sneak2
     clip: {fileID: 8300000, guid: 3076ea180f9269c4885707b396bf9d1e, type: 3}
-    volume: 0.5
+    volume: 0.7
     volumeVariance: 1
     pitch: 1
     pitchVariance: 0
@@ -307,7 +307,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Sneak3
     clip: {fileID: 8300000, guid: 8aed73fcf81354749b4093af4aa56298, type: 3}
-    volume: 0.5
+    volume: 0.7
     volumeVariance: 1
     pitch: 1
     pitchVariance: 0

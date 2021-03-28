@@ -63,6 +63,7 @@ public class KittenController : MonoBehaviour
         if (alertLevel >= maxAlertLevel)
         {
             gameState.isAlertFull = true;
+            FindObjectOfType<AudioManager>().Play("Alert");
         }
 
         // increase or decrease alert base on detecting range
@@ -71,10 +72,12 @@ public class KittenController : MonoBehaviour
             if (isPlayerInRange)
             {
                 alertLevel += incrementRate * currentRate * Time.deltaTime;
+                FindObjectOfType<AudioManager>().Play("Cat_Mew");
             }
             else if (alertLevel > 0)
             {
                 alertLevel -= decreasingRate * Time.deltaTime;
+                FindObjectOfType<AudioManager>().Play("CatWalking");
             }
         }
 
@@ -91,6 +94,7 @@ public class KittenController : MonoBehaviour
 
         Animator anim = GetComponent<Animator>();
         anim.Play("idle");
+        FindObjectOfType<AudioManager>().Play("Cat_Purr");
     }
 
     private void OnTriggerEnter(Collider other)
@@ -100,6 +104,7 @@ public class KittenController : MonoBehaviour
             gameState.isTrapTrigger = true;
             alertLevel = maxAlertLevel;
             SceneManager.LoadScene("GameOver");
+            FindObjectOfType<AudioManager>().Play("Cat_Mew");
         }
     }
 }

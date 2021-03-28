@@ -2550,6 +2550,7 @@ MonoBehaviour:
   groundCheckOffset: 0.01
   isGrounded: 1
   yRot: 0
+  isClimbing: 0
   gameState: {fileID: 11400000, guid: 82718da303039c540b5aedada1cd38af, type: 2}
   rigidbody: {fileID: 661442974}
   boxCollider: {fileID: 861949450}
@@ -6013,6 +6014,26 @@ PrefabInstance:
     - target: {fileID: 4133721306596136023, guid: a5382ff1fc33df04aa25c752c24d21c2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4869983104958895620, guid: a5382ff1fc33df04aa25c752c24d21c2, type: 3}
+      propertyPath: sounds.Array.data[7].volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4869983104958895620, guid: a5382ff1fc33df04aa25c752c24d21c2, type: 3}
+      propertyPath: sounds.Array.data[11].loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4869983104958895620, guid: a5382ff1fc33df04aa25c752c24d21c2, type: 3}
+      propertyPath: sounds.Array.data[7].loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4869983104958895620, guid: a5382ff1fc33df04aa25c752c24d21c2, type: 3}
+      propertyPath: sounds.Array.data[4].loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4869983104958895620, guid: a5382ff1fc33df04aa25c752c24d21c2, type: 3}
+      propertyPath: sounds.Array.data[5].loop
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a5382ff1fc33df04aa25c752c24d21c2, type: 3}
