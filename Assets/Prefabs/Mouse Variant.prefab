@@ -124,7 +124,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2168531549251564839, guid: 5b393462371b4b747912248a4e02a381, type: 3}
       propertyPath: m_Name
-      value: Mouse
+      value: Mouse Variant
       objectReference: {fileID: 0}
     - target: {fileID: 2168531549251564839, guid: 5b393462371b4b747912248a4e02a381, type: 3}
       propertyPath: m_TagString

@@ -29,7 +29,8 @@ public class EventJump : MonoBehaviour
 
     private void Awake()
     {
-        label.text = "";        
+        label.text = "";
+        canJump = false;
     }
 
 
@@ -61,7 +62,7 @@ public class EventJump : MonoBehaviour
             //FindObjectOfType<AudioManager>().Play("jump");
 
             // Attempt for Lerp
-            StartCoroutine(LerpPosition(positionToMoveTo, 2));
+            StartCoroutine(LerpPosition(positionToMoveTo, 1));
 
             // Attempt for Adding force
             /*    // Jump: Add force to the rigid. 
@@ -87,6 +88,7 @@ public class EventJump : MonoBehaviour
         {
             label.text = "";
         }
+        canJump = false;
     }
 
 

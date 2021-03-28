@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.SceneManagement;
-
+using UnityEngine.UI;
 public class MouseCharacter : MonoBehaviour
 {
     Animator mouseAnimator;
@@ -12,7 +12,7 @@ public class MouseCharacter : MonoBehaviour
     Rigidbody mouseRigid;
     //public float speed = 4f;
     public float yRot = 0f;
-
+    public bool isClimbing = false;
     // Speed for animation
     //public float forwardSpeed;
     //public float turningSpeed;
@@ -57,7 +57,7 @@ public class MouseCharacter : MonoBehaviour
         rigidbody.freezeRotation = true; // disable physics rotation
                                          // distance from transform.position to ground
         distGround = boxCollider.extents.y - boxCollider.center.y;
-
+        isClimbing = false;
     }
 
     private void FixedUpdate()
@@ -106,12 +106,14 @@ public class MouseCharacter : MonoBehaviour
         Ray ray;
         RaycastHit hit;
 
-        if (Input.GetKeyDown(KeyCode.J))
+        if (Input.GetKeyDown(KeyCode.J) && isClimbing)
         { // jump pressed:
             ray = new Ray(myTransform.position, myTransform.forward);
             if (Physics.Raycast(ray, out hit, jumpRange))
             { // wall ahead?
                 JumpToWall(hit.point, hit.normal); // yes: jump to the wall
+                
+                FindObjectOfType<AudioManager>().Play("LandFromJump");
             }
             else if (isGrounded)
             { // no: if grounded, jump up
@@ -187,9 +189,10 @@ public class MouseCharacter : MonoBehaviour
         //Vector3 movement = new Vector3(horizontal * speed, 0, vertical * speed);
         Vector3 movement = this.gameObject.transform.forward;
 
-     /*   this.gameObject.transform.eulerAngles = new Vector3(this.gameObject.transform.forward.x, yRot, this.gameObject.transform.forward.z);
-        var moveVec = new Vector3(0.0f, 0.0f, vertical);
-         this.gameObject.transform.Translate(moveVec * moveSpeed * Time.deltaTime);*/
+        // This line will break the climb
+        //this.gameObject.transform.eulerAngles = new Vector3(this.gameObject.transform.forward.x, yRot, this.gameObject.transform.forward.z);
+        //var moveVec = new Vector3(0.0f, 0.0f, vertical);
+         //this.gameObject.transform.Translate(moveVec * moveSpeed * Time.deltaTime);
 
         //if (vertical != 0)
         //{
@@ -212,23 +215,27 @@ public class MouseCharacter : MonoBehaviour
     {
         moveSpeed = 6.5f;
         gameState.playerState = 1;
+        FindObjectOfType<AudioManager>().Play("MouseRunning");
     }
 
     public void Sneak()
     {
         moveSpeed = 3f;
         gameState.playerState = 2;
+        FindObjectOfType<AudioManager>().Play("Sneak");
     }
     public void Crawl()
     {
         moveSpeed = 2f;
         gameState.playerState = 3;
+        FindObjectOfType<AudioManager>().Play("Sneak");
     }
 
     public void Walk()
     {
         moveSpeed = 5f;
         gameState.playerState = 0;
+        FindObjectOfType<AudioManager>().Play("CatWalking");
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -243,6 +250,22 @@ public class MouseCharacter : MonoBehaviour
         {
             gameState.level2Complete = true;
             Debug.Log("Level 2 Complete");
+        }
+    }
+
+    private void OnCollisionStay(Collision other)
+    {
+        if (other.gameObject.CompareTag("Climbable"))
+        {
+            isClimbing = true;
+            Debug.Log("Climbable!");
+        }
+    }
+    private void OnCollisionExit(Collision other)
+    {
+        if (other.gameObject.CompareTag("Climbable"))
+        {
+            isClimbing = false;
         }
     }
 }
