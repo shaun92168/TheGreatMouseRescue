@@ -11,6 +11,7 @@ public class MouseCharacter : MonoBehaviour
     public float jumpSpeed = 2f;
     Rigidbody mouseRigid;
     public float speed = 4f;
+    public float yRot = 0f;
 
     // Speed for animation
     public float forwardSpeed;
@@ -59,13 +60,27 @@ public class MouseCharacter : MonoBehaviour
         // Movement
         float vertical = Input.GetAxis("Vertical");
         float horizontal = Input.GetAxis("Horizontal");
-        Vector3 movement = new Vector3(horizontal * speed, 0, vertical * speed);
-        if (movement.magnitude > 0)
+        yRot += horizontal;
+       
+        if (vertical > -0.2f && vertical < 0.2f)
         {
-            movement.Normalize();
-            movement *= speed * Time.deltaTime;
-            transform.Translate(movement, Space.World);
+            mouseAnimator.SetFloat("Forward", 0);
         }
+
+        Debug.Log(vertical);
+        //Vector3 movement = new Vector3(horizontal * speed, 0, vertical * speed);
+        Vector3 movement = this.gameObject.transform.forward;
+
+        this.gameObject.transform.eulerAngles = new Vector3(this.gameObject.transform.forward.x, yRot, this.gameObject.transform.forward.z);
+        var moveVec = new Vector3(0.0f, 0.0f, vertical);
+        this.gameObject.transform.Translate(moveVec * speed * Time.deltaTime);
+
+        //if (vertical != 0)
+        //{
+        //    movement.Normalize();
+        //    movement *= speed * Time.deltaTime;
+        //    transform.Translate(movement, Space.World);
+        //}
 
         // Animating
         float Forward = Vector3.Dot(movement.normalized, transform.forward);

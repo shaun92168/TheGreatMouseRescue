@@ -167,7 +167,7 @@ BlendTree:
   - serializedVersion: 2
     m_Motion: {fileID: 7400000, guid: c4c5268f18493bc4486a9eff6ef60a2a, type: 2}
     m_Threshold: 0.61538464
-    m_Position: {x: 0.1, y: -1.1}
+    m_Position: {x: 0, y: -2}
     m_TimeScale: 4
     m_CycleOffset: 0
     m_DirectBlendParameter: Blend
@@ -183,7 +183,7 @@ BlendTree:
   - serializedVersion: 2
     m_Motion: {fileID: 7400000, guid: 0c98092ee8be7f1478066fdfeb712a10, type: 2}
     m_Threshold: 0.7692308
-    m_Position: {x: -1, y: -1}
+    m_Position: {x: -2, y: -2}
     m_TimeScale: 4
     m_CycleOffset: 0
     m_DirectBlendParameter: Blend
@@ -191,7 +191,7 @@ BlendTree:
   - serializedVersion: 2
     m_Motion: {fileID: 7400000, guid: 003187c9f65c6664294810060029be5b, type: 2}
     m_Threshold: 0.84615386
-    m_Position: {x: 1, y: -1}
+    m_Position: {x: 2, y: -2}
     m_TimeScale: 4
     m_CycleOffset: 0
     m_DirectBlendParameter: Blend
@@ -822,7 +822,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Blend Tree
-  m_Speed: 1
+  m_Speed: 0.7
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 110189568}
