@@ -2359,6 +2359,7 @@ MonoBehaviour:
   isGrounded: 1
   jumpSpeed: 2
   speed: 4
+  yRot: 0
   forwardSpeed: 0
   turnSpeed: 0
   walkMode: 1
