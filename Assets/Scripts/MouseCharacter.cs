@@ -20,6 +20,8 @@ public class MouseCharacter : MonoBehaviour
     //public float jumpStartTime = 0f;
     //public float maxWalkSpeed = 1f;
 
+    public GameState gameState;
+
     
     void Start()
     {
@@ -94,19 +96,23 @@ public class MouseCharacter : MonoBehaviour
     public void Run()
     {
         speed = 6.5f;
+        gameState.playerState = 1;
     }
 
     public void Sneak()
     {
         speed = 3f;
+        gameState.playerState = 2;
     }
     public void Crawl()
     {
         speed = 2f;
+        gameState.playerState = 3;
     }
 
     public void Walk()
     {
         speed = 5f;
+        gameState.playerState = 0;
     }
 }

@@ -2339,6 +2339,7 @@ MonoBehaviour:
   forwardSpeed: 0
   turnSpeed: 0
   walkMode: 1
+  gameState: {fileID: 11400000, guid: 82718da303039c540b5aedada1cd38af, type: 2}
 --- !u!54 &661442974 stripped
 Rigidbody:
   m_CorrespondingSourceObject: {fileID: 7950641334647328516, guid: 5eba36678632dd648af81c075e81cae8, type: 3}
