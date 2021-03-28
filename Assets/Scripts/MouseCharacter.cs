@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class MouseCharacter : MonoBehaviour
 {
@@ -27,6 +28,14 @@ public class MouseCharacter : MonoBehaviour
     {
         mouseAnimator = GetComponent<Animator>();
         mouseRigid = GetComponent<Rigidbody>();
+        if (SceneManager.GetActiveScene().name == "GamePlay_2")
+        {
+            yRot = 90.0f;
+        }
+        if (SceneManager.GetActiveScene().name == "GamePlay_3")
+        {
+            yRot = 180.0f;
+        }
     }
 
     void Update()
@@ -62,7 +71,8 @@ public class MouseCharacter : MonoBehaviour
         // Movement
         float vertical = Input.GetAxis("Vertical");
         float horizontal = Input.GetAxis("Horizontal");
-        yRot += horizontal;
+
+        yRot += horizontal * 0.8f;
        
         if (vertical > -0.2f && vertical < 0.2f)
         {
@@ -119,10 +129,16 @@ public class MouseCharacter : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.name == "Trigger_1")
+        if (collision.gameObject.name == "Trigger_1" && gameState.activeLevel == 1)
         {
             gameState.level1Complete = true;
             Debug.Log("Level 1 Complete");
+        }
+
+        if (collision.gameObject.name == "Trigger_2" && gameState.activeLevel == 2)
+        {
+            gameState.level2Complete = true;
+            Debug.Log("Level 2 Complete");
         }
     }
 }

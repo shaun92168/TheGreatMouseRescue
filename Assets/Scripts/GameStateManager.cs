@@ -51,5 +51,12 @@ public class GameStateManager : MonoBehaviour
             SceneManager.LoadScene("CutScene_2");
             gameState.level1Complete = false;
         }
+
+        if (gameState.level2Complete)
+        {
+            gameState.activeLevel = 3;
+            SceneManager.LoadScene("CutScene_3");
+            gameState.level2Complete = false;
+        }
     }
 }
