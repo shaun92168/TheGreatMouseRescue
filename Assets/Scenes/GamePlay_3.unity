@@ -6884,7 +6884,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1636661369, guid: 5eba36678632dd648af81c075e81cae8, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1636661370, guid: 5eba36678632dd648af81c075e81cae8, type: 3}
       propertyPath: m_Enabled
@@ -6980,13 +6980,15 @@ MonoBehaviour:
   groundCheckDistance: 0.1
   groundCheckOffset: 0.01
   isGrounded: 1
-  jumpSpeed: 2
-  speed: 4
   yRot: 0
-  forwardSpeed: 0
-  turnSpeed: 0
-  walkMode: 1
   gameState: {fileID: 11400000, guid: 82718da303039c540b5aedada1cd38af, type: 2}
+  rigidbody: {fileID: 1538153486}
+  boxCollider: {fileID: 1538153489}
+--- !u!65 &1538153489 stripped
+BoxCollider:
+  m_CorrespondingSourceObject: {fileID: 1636661369, guid: 5eba36678632dd648af81c075e81cae8, type: 3}
+  m_PrefabInstance: {fileID: 1538153484}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1551464139
 PrefabInstance:
   m_ObjectHideFlags: 0
