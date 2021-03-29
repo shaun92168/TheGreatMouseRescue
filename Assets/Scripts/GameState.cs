@@ -23,4 +23,5 @@ public class GameState : ScriptableObject
     [Header("Player Status")]
     // 0 = Stand, 1 = Run , 2 = Sneak, 3 = Crawl
     public int playerState;
+
 }

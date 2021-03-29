@@ -21,6 +21,7 @@ public class MouseCharacter : MonoBehaviour
     //public float maxWalkSpeed = 1f;
 
     public GameState gameState;
+    public GameStateManager gameStateManager;
 
     public Rigidbody rigidbody;
     private float moveSpeed = 6; // move speed
@@ -35,6 +36,7 @@ public class MouseCharacter : MonoBehaviour
     private float distGround; // distance from character position to ground
     private bool jumping = false; // flag &quot;I'm jumping to wall&quot;
     private float vertSpeed = 0; // vertical jump current speed
+    public bool onWall = false; 
 
     private Transform myTransform;
     public BoxCollider boxCollider; // drag BoxCollider ref in editor
@@ -99,6 +101,7 @@ public class MouseCharacter : MonoBehaviour
 
     void Update()
     {
+
         if (gameState.playerState == 0)
         {
             FindObjectOfType<AudioManager>().Play("MouseRunning");
@@ -131,6 +134,11 @@ public class MouseCharacter : MonoBehaviour
             ray = new Ray(myTransform.position, myTransform.forward);
             if (Physics.Raycast(ray, out hit, jumpRange))
             { // wall ahead?
+                onWall = true;
+                gameStateManager.mainCam.SetActive(false);
+                gameStateManager.mainCam.GetComponent<AudioListener>().enabled = false;
+                gameStateManager.climbCam.SetActive(true);
+                gameStateManager.climbCam.GetComponent<AudioListener>().enabled = true;
                 JumpToWall(hit.point, hit.normal); // yes: jump to the wall
                 
                 FindObjectOfType<AudioManager>().Play("LandFromJump");
@@ -138,6 +146,16 @@ public class MouseCharacter : MonoBehaviour
             else if (isGrounded)
             { // no: if grounded, jump up
                 rigidbody.velocity += jumpSpeed * myNormal;
+            }
+        }
+
+        if (gameState.activeLevel == 2 | gameState.activeLevel == 3) {
+            if (!onWall)
+            {
+                gameStateManager.mainCam.SetActive(true);
+                gameStateManager.mainCam.GetComponent<AudioListener>().enabled = true;
+                gameStateManager.climbCam.SetActive(false);
+                gameStateManager.climbCam.GetComponent<AudioListener>().enabled = false;
             }
         }
 
@@ -205,7 +223,7 @@ public class MouseCharacter : MonoBehaviour
             mouseAnimator.SetFloat("Forward", 0);
         }
 
-        Debug.Log(vertical);
+        //Debug.Log(vertical);
         //Vector3 movement = new Vector3(horizontal * speed, 0, vertical * speed);
         Vector3 movement = this.gameObject.transform.forward;
 
@@ -264,10 +282,28 @@ public class MouseCharacter : MonoBehaviour
             Debug.Log("Level 1 Complete");
         }
 
-        if (collision.gameObject.name == "Trigger_2")
+        if (collision.gameObject.name == "Cheese_02")
         {
             gameState.level2Complete = true;
             Debug.Log("Level 2 Complete");
+        }
+
+        if (collision.gameObject.name == "cage")
+        {
+            gameState.level3Complete = true;
+            Debug.Log("Level 3 Complete");
+        }
+
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.name == "JumpEventTran2")
+        {
+            gameStateManager.mainCam.SetActive(true);
+            gameStateManager.mainCam.GetComponent<AudioListener>().enabled = true;
+            gameStateManager.climbCam.SetActive(false);
+            gameStateManager.climbCam.GetComponent<AudioListener>().enabled = false;
         }
     }
 

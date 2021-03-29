@@ -41,23 +41,9 @@ public class EventJump : MonoBehaviour
         positionToMoveTo = endTrans.position;
     }
 
-    IEnumerator LerpPosition(Vector3 targetPosition, float duration)
+    private void Update()
     {
-        float time = 0;
-        Vector3 startPosition = startTrans.position;
-
-        while (time < duration)
-        {
-            startTrans.position = Vector3.Lerp(startPosition, targetPosition, time / duration);
-            time += Time.deltaTime;
-            yield return null;
-        }
-        startTrans.position = targetPosition;
-    }
-
-    void FixedUpdate()
-    {
-        if(Input.GetKeyDown(KeyCode.O) && canJump)
+        if (Input.GetKeyDown(KeyCode.O) && canJump)
         {
             //FindObjectOfType<AudioManager>().Play("jump");
 
@@ -73,6 +59,21 @@ public class EventJump : MonoBehaviour
                 mouseRigid.AddForce(f);*/
         }
     }
+
+    IEnumerator LerpPosition(Vector3 targetPosition, float duration)
+    {
+        float time = 0;
+        Vector3 startPosition = startTrans.position;
+
+        while (time < duration)
+        {
+            startTrans.position = Vector3.Lerp(startPosition, targetPosition, time / duration);
+            time += Time.deltaTime;
+            yield return null;
+        }
+        startTrans.position = targetPosition;
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))

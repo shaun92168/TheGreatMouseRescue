@@ -7,6 +7,8 @@ public class GameStateManager : MonoBehaviour
 {
     public GameState gameState;
     public List<GameObject> traps;
+    public GameObject mainCam;
+    public GameObject climbCam;
 
     private string alertingTrap;
 
@@ -20,6 +22,10 @@ public class GameStateManager : MonoBehaviour
         gameState.level2Complete = false;
         gameState.level3Complete = false;
         gameState.activeLevel = 1;
+        mainCam.SetActive(true);
+        mainCam.GetComponent<AudioListener>().enabled = true;
+        climbCam.SetActive(false);
+        climbCam.GetComponent<AudioListener>().enabled = false;
 
     }
 
@@ -57,6 +63,13 @@ public class GameStateManager : MonoBehaviour
             gameState.activeLevel = 3;
             SceneManager.LoadScene("CutScene_3");
             gameState.level2Complete = false;
+        }
+
+        if (gameState.level3Complete)
+        {
+            gameState.activeLevel = 4;
+            SceneManager.LoadScene("StoryScene_Act3");
+            gameState.level3Complete = false;
         }
     }
 }
