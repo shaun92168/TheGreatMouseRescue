@@ -43,7 +43,7 @@ public class EventJump : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.O) && canJump)
+        if (Input.GetKeyDown(KeyCode.J) && canJump)
         {
             //FindObjectOfType<AudioManager>().Play("jump");
 
@@ -79,7 +79,7 @@ public class EventJump : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             canJump = true;
-            label.text = "Press [O] to Jump!!!";
+            label.text = "Press [J] to Jump!!!";
             label.fontSize = 70;
         }
     }
