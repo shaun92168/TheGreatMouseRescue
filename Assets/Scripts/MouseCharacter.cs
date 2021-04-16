@@ -102,7 +102,7 @@ public class MouseCharacter : MonoBehaviour
     void Update()
     {
 
-        if (gameState.isAlertFull)
+        if (gameState.isGameOver)
         {
             mouseAnimator.SetBool("isDead", true);
         }
@@ -190,7 +190,7 @@ public class MouseCharacter : MonoBehaviour
         myTransform.Translate(0, 0, Input.GetAxis("Vertical") * moveSpeed * Time.deltaTime);
 
         //Walk();
-        if (!gameState.isAlertFull)
+        if (!gameState.isGameOver)
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
