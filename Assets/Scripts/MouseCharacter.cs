@@ -102,6 +102,11 @@ public class MouseCharacter : MonoBehaviour
     void Update()
     {
 
+        if (gameState.isAlertFull)
+        {
+            mouseAnimator.SetBool("isDead", true);
+        }
+
         if (gameState.playerState == 0)
         {
             FindObjectOfType<AudioManager>().Play("MouseRunning");
@@ -185,31 +190,38 @@ public class MouseCharacter : MonoBehaviour
         myTransform.Translate(0, 0, Input.GetAxis("Vertical") * moveSpeed * Time.deltaTime);
 
         //Walk();
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (!gameState.isAlertFull)
         {
-            Run();
-        }
-        if (Input.GetKeyUp(KeyCode.Space))
-        {
-            Walk();
-        }
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                Run();
+            }
+            if (Input.GetKeyUp(KeyCode.Space))
+            {
+                Walk();
+            }
 
-        if (Input.GetKeyDown(KeyCode.LeftShift))
-        {
-            Sneak();
-        }
-        if (Input.GetKeyUp(KeyCode.LeftShift))
-        {
-            Walk();
-        }
+            if (Input.GetKeyDown(KeyCode.LeftShift))
+            {
+                Sneak();
+            }
+            if (Input.GetKeyUp(KeyCode.LeftShift))
+            {
+                Walk();
+            }
 
-        if (Input.GetKeyDown(KeyCode.LeftControl))
+            if (Input.GetKeyDown(KeyCode.LeftControl))
+            {
+                Crawl();
+            }
+            if (Input.GetKeyUp(KeyCode.LeftControl))
+            {
+                Walk();
+            }
+        } else
         {
-            Crawl();
-        }
-        if (Input.GetKeyUp(KeyCode.LeftControl))
-        {
-            Walk();
+            moveSpeed = 0;
+            turnSpeed = 0;
         }
 
         // Movement
