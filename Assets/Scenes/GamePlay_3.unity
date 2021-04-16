@@ -7409,6 +7409,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1538153485}
+    - target: {fileID: 3092572637461255021, guid: ae126f1654c1d4841b2305fff0e54654, type: 3}
+      propertyPath: incrementRate
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 7057695015235440423, guid: ae126f1654c1d4841b2305fff0e54654, type: 3}
       propertyPath: m_Name
       value: Cat Dinning Room
