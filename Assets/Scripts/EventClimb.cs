@@ -25,7 +25,7 @@ public class EventClimb : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             //mouseCharacter.isClimbing = true;
-            label.text = "Press [J] to Climb !!!";
+            label.text = "Press [C] to Climb !!!";
             label.fontSize = 70;
         }
     }
