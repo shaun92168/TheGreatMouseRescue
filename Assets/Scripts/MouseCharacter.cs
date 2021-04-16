@@ -129,7 +129,7 @@ public class MouseCharacter : MonoBehaviour
         Ray ray;
         RaycastHit hit;
 
-        if (Input.GetKeyDown(KeyCode.J) && isClimbing)
+        if (Input.GetKeyDown(KeyCode.C) && isClimbing)
         { // jump pressed:
             ray = new Ray(myTransform.position, myTransform.forward);
             if (Physics.Raycast(ray, out hit, jumpRange))
