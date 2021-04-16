@@ -609,15 +609,15 @@ MonoBehaviour:
   - {fileID: 0}
   PerPageLinesOfText: 08000000
   PageTextLines:
-  - "Seeing his sister Sam calls out in desperation \u201CLindsay\u201D but she is
-    too far to hear."
-  - "Sam takes control, \u201CKarl, here is what we are going to do...\u201D"
-  - "\u201CWe will go up the bookshelf\u2026\""
-  - "\"jump across to the chair\u2026\""
-  - "\"Then across the table to the back chair\u2026\""
-  - "\"from there we can jump to the hutch with Lindsay's cage on it\u2026\""
-  - '"Then we free her, get out of here and back home."'
-  - But before Karl can answer Sam takes off to climb the shelves.
+  - "Seeing his sister, Sam calls out in desperation, \u201CLindsay,\u201D but she
+    is too far to hear."
+  - "Sam takes control, \u201CKarl, here is what we are going to do..."
+  - "we will go up the bookshelf\u2026"
+  - "jump across to the chair\u2026"
+  - "then across the table to the back chair\u2026"
+  - "from there we can jump to the hutch with Lindsay's cage on it\u2026"
+  - "then we free her, get out of here, and back home.\u201D"
+  - But before Karl can answer, Sam takes off to climb the shelves.
   AnimTakeContolOnTextLine: 0100000001000000
   Animators:
   - {fileID: 1890908127}

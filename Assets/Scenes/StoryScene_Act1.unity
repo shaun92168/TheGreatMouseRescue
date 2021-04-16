@@ -614,25 +614,24 @@ MonoBehaviour:
   PerPageLinesOfText: 030000000500000003000000
   PageTextLines:
   - '"Sam, where do you think you are going?" asks his mom. "Karl and I are going
-    out to play." says Sam.'
+    out to play."'
   - '"Sam, I told you yesterday that I have errands to run today so you have to take
-    care of your little sister Lindsay. No arguments, you stay home and watch your
+    care of your little sister, Lindsay. No arguments, you stay home and watch your
     sister."'
   - "Little does Sam\u2019s mom know that Sam and Karl will be heading to the general
-    store shortly after his mom leaves. Lindsay will have to tag along as best as
-    she can."
-  - 'Lindsay could not keep up with her big brother and found herself caught alone
-    and trapped by Cheddar city''s mouse catcher. '
-  - The catcher took frightened Lindsay home to lock her up in his cage.
+    store shortly after she leaves. Lindsay will have to tag along as best as she
+    can."
+  - Lindsay could not keep up with her big brother and was caught and trapped by
+    Cheddar City's mouse catcher
+  - The catcher took the frightened Lindsay home to lock her up in his cage.
   - "Sam did not want Karl to get his mom, so he dragged Karl to the mouse catcher\u2019s
     home."
   - Sam thought he could save Lindsay without his mom being the wiser.
-  - They did not know the difficulties that they would face.
-  - After searching around the entire house for a way in, the boys only found one
-    way in.
-  - "Karl explains to Sam, \u201Cwe are going to have to go up the trellis and crawl
-    into the open window.\u201D"
-  - Sam agrees and they start the climb.
+  - They did not know the difficulties they would face.
+  - After searching around the entire house, the boys only found one way in.
+  - "Karl explains to Sam, \u201CWe will have to go up the trellis and crawl through
+    the open window.\u201D"
+  - Sam agrees, and they start the climb.
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0

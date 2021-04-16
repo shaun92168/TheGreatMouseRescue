@@ -741,18 +741,18 @@ MonoBehaviour:
   - {fileID: 0}
   PerPageLinesOfText: 07000000
   PageTextLines:
-  - Once at the top, and on the windowsill, Sam feels his first doubt and fear at
-    seeing the size of the house. Karl does not miss a beat and sizes up the way
-    in and through the living room.
+  - "Once at the top on the windowsill, Sam feels his first doubt and fear at seeing
+    the size of the house. Karl does not miss a beat and studies the way through
+    the living room.\u201D"
   - "First, we go to the wall over here\u2026"
   - "then under the bookcase\u2026"
   - hug the wall...
   - and through the far door.
-  - "\"Eek\u201D says the boys as they see the curled-up cat on the floor between
-    them and the door. Karl, through chattering teeth says, \u201Clook the cat, his
-    name is blade!\u201D They say no one gets away from him."
-  - "Sam swallows his fears, \u201CKarl I have to save Lindsay. We can do it, just
-    keep quiet and go slow so we don\u2019t wake Blade.\u201D"
+  - "\"Eek\u201D the boys say as they see the curled-up cat on the floor between
+    them and the door. Karl, through chattering teeth, says, \u201CLook at the cat,
+    her name is Blade!\u201D They say no one gets away from her."
+  - "Sam swallows his fears. \u201CKarl, I have to save Lindsay. We can do it, just
+    keep quiet and go slow so we don\u2019t wake Blade."
   AnimTakeContolOnTextLine: 0100000001000000
   Animators:
   - {fileID: 1890908127}

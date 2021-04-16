@@ -57,7 +57,7 @@ MonoBehaviour:
   incrementRate: 50
   decreasingRate: 5
   standRate: 1
-  runRate: 1.5
+  runRate: 2
   sneakRate: 0.5
   crawlRate: 0.2
   closerToTrap: {fileID: 8300000, guid: e345df24c2445364eb1e131ef94e1dee, type: 3}

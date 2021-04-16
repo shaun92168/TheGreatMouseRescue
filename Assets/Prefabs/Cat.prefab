@@ -2023,10 +2023,10 @@ MonoBehaviour:
   isPlayerInRange: 0
   maxAlertLevel: 100
   alertLevel: 0
-  incrementRate: 20
+  incrementRate: 50
   decreasingRate: 5
   standRate: 1
-  runRate: 1.5
+  runRate: 2
   sneakRate: 0.5
   crawlRate: 0.2
   catMewing: {fileID: 8300000, guid: 2029952a85d125f4e86ca087452cc0bc, type: 3}
