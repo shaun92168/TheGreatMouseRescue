@@ -475,7 +475,7 @@ MonoBehaviour:
   isPlayerInRange: 0
   maxAlertLevel: 100
   alertLevel: 0
-  incrementRate: 20
+  incrementRate: 50
   decreasingRate: 5
   standRate: 1
   runRate: 1.5
