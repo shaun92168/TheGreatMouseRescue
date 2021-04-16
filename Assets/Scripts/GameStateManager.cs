@@ -11,6 +11,7 @@ public class GameStateManager : MonoBehaviour
     public GameObject climbCam;
 
     private string alertingTrap;
+    private Scene currentScene;
 
     void Start()
     {
@@ -18,15 +19,35 @@ public class GameStateManager : MonoBehaviour
         gameState.isTrapTrigger = false;
         gameState.isAlertFull = false;
         gameState.isGameOver = false;
-        gameState.level1Complete = false;
-        gameState.level2Complete = false;
-        gameState.level3Complete = false;
-        gameState.activeLevel = 1;
         mainCam.SetActive(true);
         mainCam.GetComponent<AudioListener>().enabled = true;
         climbCam.SetActive(false);
         climbCam.GetComponent<AudioListener>().enabled = false;
+        currentScene = SceneManager.GetActiveScene();
 
+        switch (currentScene.name)
+        {
+            case "GamePlay_1":
+                gameState.activeLevel = 1;
+                gameState.level1Complete = false;
+                gameState.level2Complete = false;
+                gameState.level3Complete = false;
+                break;
+            case "GamePlay_2":
+                gameState.activeLevel = 2;
+                gameState.level1Complete = true;
+                gameState.level2Complete = false;
+                gameState.level3Complete = false;
+                break;
+            case "GamePlay_3":
+                gameState.activeLevel = 3;
+                gameState.level1Complete = true;
+                gameState.level2Complete = true;
+                gameState.level3Complete = false;
+                break;
+            default:
+                break;
+        }
     }
 
     void Update()
@@ -49,27 +70,6 @@ public class GameStateManager : MonoBehaviour
         if (Input.GetKey("escape"))
         {
             SceneManager.LoadScene("GameOver");
-        }
-
-        if (gameState.level1Complete)
-        {
-            gameState.activeLevel = 2;
-            SceneManager.LoadScene("CutScene_2");
-            gameState.level1Complete = false;
-        }
-
-        if (gameState.level2Complete)
-        {
-            gameState.activeLevel = 3;
-            SceneManager.LoadScene("CutScene_3");
-            gameState.level2Complete = false;
-        }
-
-        if (gameState.level3Complete)
-        {
-            gameState.activeLevel = 4;
-            SceneManager.LoadScene("StoryScene_Act3");
-            gameState.level3Complete = false;
-        }
+        }   
     }
 }
