@@ -479,7 +479,7 @@ MonoBehaviour:
   incrementRate: 50
   decreasingRate: 5
   standRate: 1
-  runRate: 1.5
+  runRate: 2
   sneakRate: 0.5
   crawlRate: 0.2
   catWalking: {fileID: 8300000, guid: a2b763259c2a4474787c7aa362508a19, type: 3}
