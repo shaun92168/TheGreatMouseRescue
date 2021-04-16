@@ -558,39 +558,38 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 0018acab3e95e0a44804958ab7fdd01b, type: 3}
   PerPageLinesOfText: 0700000007000000040000000200000001000000
   PageTextLines:
-  - Sam opens the cage to an excited Lindsay that runs out and hugs him in tears
+  - Sam opens the cage to an excited Lindsay, who runs out and hugs him in tears.
   - '"I knew you would come," exclaims Lindsay.'
-  - "Karl pipes up and says, \u201Clet\u2019s go before Blade wakes up\u201D"
+  - "Karl pipes up and says, \u201CLet\u2019s go before Blade wakes up.\u201D"
   - But as Karl turns, he knocks over the display plate with a crash.
-  - This wakes a startled Blade followed by the mouse catcher running down the stairs
+  - This wakes a startled Blade, followed by the mouse catcher running down the stairs
     to investigate.
-  - "\u201CRun!\u201D yells Lindsay and jumps for her life to the floor."
-  - Sam and Karl in a panic follow and Sam takes off in the lead with his sister
-    following with Karl taking up the rear.
+  - "\u201CRun!\u201D yells Lindsay, and jumps to the floor."
+  - Sam and Karl in a panic follow, and Sam takes the lead with his sister following,
+    and Karl in the rear.
   - As they exit the dining room and run through the kitchen to the living room,
     they see the Catcher at the bottom of the stairs.
-  - The Catcher sees his catch getting away but realizes there is now a total of
-    three mice for the taking.
-  - "\u201CHurry up or we will never make it\u201D yells Sam. "
-  - Halfway across the living room they realize that they cannot make it to the window
-    and climb up before they are caught.
-  - "In a panic Karl decides his best friend and sister must get away, \u201CI\u2019ll
-    draw Blade to step in the mouse trap and slow him down.\u201D"
-  - "\"The mouse catcher is too slow so you will make it out.\u201D"
-  - Before Sam or Lindsay can protest Karl starts running towards the mouse trap
+  - "The Catcher sees his catch getting away, but realizes there are now three mice
+    for the taking.\u201D"
+  - "\u201CHurry up or we\u2019ll never make it,\u201D yells Sam."
+  - "Halfway across the living room they realize they cannot make it to the window
+    and climb up before they\u2019re caught."
+  - "In a panic, Karl decides his best friend and sister must get away. \u201CI\u2019ll
+    draw Blade to step in the mouse trap and slow her down.\u201D"
+  - "\"The mouse catcher is too slow, so you can make it out.\u201D"
+  - Before Sam or Lindsay can protest, Karl starts running towards the mouse trap,
     yelling for Blade to follow.
-  - Lindsey and Sam made it to the window, down the trellis, and run back home as
+  - Lindsey and Sam make it to the window, down the trellis, and run back home as
     fast as they can.
-  - Sam looks to Lindsay's in shock at what had just happened as Blade or the Catcher
-    have Karl.
-  - "Lindsay, \u201Cfollow me Karl taught me the best way and we will get home to
-    mom safely.\u201D"
+  - 'Sam looks to Lindsay in shock at what just happened: Blade or the Catcher has
+    Karl.'
+  - "Lindsay says, \u201CFollow me, Karl taught me the best way and we will get home
+    to mom safely.\u201D"
   - They arrive home with no sign of Blade or the mouse catcher and...
-  - "Lindsay runs to her mother\u2019s open arms crying and tells the whole story
-    while being securely hugged by her."
-  - "Just as they are telling mom about Karl\u2019s act of heroism they both pause
-    to realize Karl is gone."
-  - "The door slams open framing Karl in tatters and scratches saying, \u201CWho
+  - "Lindsay runs to her mother\u2019s open arms crying and tells the whole story."
+  - "Just as they are telling mom about Karl\u2019s act of heroism, they both pause
+    to realize Karl is dead."
+  - "The door slams open, framing Karl in tatters and scratches saying, \u201CWho
     wants to play?\u201D"
 --- !u!1 &705507993
 GameObject:

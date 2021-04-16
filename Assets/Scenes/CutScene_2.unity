@@ -742,18 +742,18 @@ MonoBehaviour:
   PerPageLinesOfText: 0c000000
   PageTextLines:
   - "Sam says to Karl, \u201CDo you see what I see? I\u2019m hungry, aren\u2019t
-    you? But how do we get that\u201D"
+    you? But how do we get that?\u201D "
   - "Karl thinks about it and says \"First, we go to the back door, over here\u2026"
   - "then climb the boots\u2026"
   - jump to the chair...
   - across the table...
-  - jump to the chair...
+  - jump to the other chair...
   - and then jump to the curtain and up to the top...
   - across to the other curtain...
-  - down the curtain and jump to the counter and delicious cheese"
-  - Sam responds with "You're brilliant!"
-  - 'Jumping to action Sam starts to the task at hand yelling back, '
-  - '"I''ll get the food you wait here, and we will have a feast."'
+  - down the curtain, and jump to the counter and delicious cheese"
+  - "Sam responds with, \u201CYou're brilliant!\u201D"
+  - Jumping to action, Sam starts the task at hand, yelling back,
+  - "\u201CI\u2019ll get the food. You wait here and we will have a feast.\u201D"
   AnimTakeContolOnTextLine: 0100000001000000
   Animators:
   - {fileID: 1890908127}
