@@ -159,8 +159,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -10.800049, y: 8.599976}
-  m_SizeDelta: {x: 120, y: 30}
+  m_AnchoredPosition: {x: -12, y: 9}
+  m_SizeDelta: {x: 140, y: 55}
   m_Pivot: {x: 1, y: 0}
 --- !u!114 &189534599
 MonoBehaviour:
@@ -314,10 +314,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_FontSize: 24
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 2
     m_MaxSize: 40
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -551,11 +551,11 @@ MonoBehaviour:
   PgImageObject: {fileID: 1890908124}
   PageTextObject: {fileID: 1442766293}
   PageImages:
-  - {fileID: 21300000, guid: 80b2ff1dca58ad046ab05f795e4f51f3, type: 3}
-  - {fileID: 21300000, guid: af610e2f2a6bf8242b5d24ddbb598fed, type: 3}
-  - {fileID: 21300000, guid: 92744a4e349e6664fb734c2849d9215b, type: 3}
-  - {fileID: 21300000, guid: d91539138e2182c40b5d321d38b88975, type: 3}
-  - {fileID: 21300000, guid: 1ed705763b17b0543bd3c39e7ecaf473, type: 3}
+  - {fileID: 21300000, guid: 4c7276a84c7c91c4e9a68eda47a12a42, type: 3}
+  - {fileID: 21300000, guid: 295d9a2666cfea34fb7705dcd9fbf733, type: 3}
+  - {fileID: 21300000, guid: aab893716f5e97245a17483572e523ef, type: 3}
+  - {fileID: 21300000, guid: 954c9a2eb94f711449bc1be837effee3, type: 3}
+  - {fileID: 21300000, guid: 0018acab3e95e0a44804958ab7fdd01b, type: 3}
   PerPageLinesOfText: 0700000007000000040000000200000001000000
   PageTextLines:
   - Sam opens the cage to an excited Lindsay that runs out and hugs him in tears
@@ -718,10 +718,10 @@ RectTransform:
   m_Father: {fileID: 646882699}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 0}
-  m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -1778.7, y: 8.599976}
-  m_SizeDelta: {x: 130, y: 30}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 150, y: 9}
+  m_SizeDelta: {x: 140, y: 55}
   m_Pivot: {x: 1, y: 0}
 --- !u!114 &731130754
 MonoBehaviour:
@@ -875,10 +875,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_FontSize: 24
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 2
     m_MaxSize: 40
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -1295,10 +1295,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_FontSize: 24
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 2
     m_MaxSize: 40
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -1709,8 +1709,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -142.69995, y: 8.599976}
-  m_SizeDelta: {x: 110, y: 30}
+  m_AnchoredPosition: {x: -160, y: 9}
+  m_SizeDelta: {x: 140, y: 55}
   m_Pivot: {x: 1, y: 0}
 --- !u!114 &1912925811
 MonoBehaviour:
