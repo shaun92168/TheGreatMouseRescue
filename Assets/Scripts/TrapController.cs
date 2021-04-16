@@ -25,11 +25,18 @@ public class TrapController : MonoBehaviour
     public float crawlRate = 0.2f;
     private float currentRate;
 
+    // SFX
+    AudioSource audioSource;
+    public AudioClip closerToTrap;
+    public AudioClip trapActive;
+    public float volume = 1f;
+
     // set up variables
     void Start()
     {
         alertLevel = 0.0f;
         currentRate = 0.0f;
+        audioSource = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -63,6 +70,11 @@ public class TrapController : MonoBehaviour
         if (alertLevel >= maxAlertLevel)
         {
             gameState.isAlertFull = true;
+     /*       if (!audioSource.isPlaying && (alertLevel == 60))
+            {
+                audioSource.clip = trapActive;
+                audioSource.PlayOneShot(audioSource.clip, 1.5f);
+            }*/
         }
 
         // increase or decrease alert base on detecting range
@@ -71,6 +83,11 @@ public class TrapController : MonoBehaviour
             if (isPlayerInRange)
             {
                 alertLevel += incrementRate * currentRate * Time.deltaTime;
+                if (!audioSource.isPlaying)
+                {
+                    audioSource.clip = closerToTrap;
+                    audioSource.PlayOneShot(audioSource.clip, volume);
+                }
             }
             else if (alertLevel > 0)
             {
@@ -87,7 +104,6 @@ public class TrapController : MonoBehaviour
         else
         {
             alertBar.SetActive(true);
-            FindObjectOfType<AudioManager>().Play("CloserToTrap");
         }
     }
 
@@ -95,10 +111,14 @@ public class TrapController : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            if (!audioSource.isPlaying)
+            {
+                audioSource.clip = trapActive;
+                audioSource.PlayOneShot(audioSource.clip, volume);
+            }
             gameState.isTrapTrigger = true;
             alertLevel = maxAlertLevel;
             SceneManager.LoadScene("GameOver");
-            FindObjectOfType<AudioManager>().Play("TrapActive");
         }
     }
 }

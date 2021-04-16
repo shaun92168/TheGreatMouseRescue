@@ -251,7 +251,7 @@ public class MouseCharacter : MonoBehaviour
 
     public void Run()
     {
-        moveSpeed = 6.5f;
+        moveSpeed = 9f;
         gameState.playerState = 1;
     }
 

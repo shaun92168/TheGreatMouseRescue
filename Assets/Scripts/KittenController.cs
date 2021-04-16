@@ -25,11 +25,20 @@ public class KittenController : MonoBehaviour
     public float crawlRate = 0.2f;
     private float currentRate;
 
+    // SFX
+    AudioSource audioSource;
+    public AudioClip catWalking;
+    public AudioClip catMewing;
+    public AudioClip alertSound;
+    public float volume = 1f;
+
+
     // set up variables
     void Start()
     {
         alertLevel = 0.0f;
         currentRate = 0.0f;
+        audioSource = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -63,7 +72,7 @@ public class KittenController : MonoBehaviour
         if (alertLevel >= maxAlertLevel)
         {
             gameState.isAlertFull = true;
-            FindObjectOfType<AudioManager>().Play("Alert");
+
         }
 
         // increase or decrease alert base on detecting range
@@ -72,12 +81,16 @@ public class KittenController : MonoBehaviour
             if (isPlayerInRange)
             {
                 alertLevel += incrementRate * currentRate * Time.deltaTime;
-                FindObjectOfType<AudioManager>().Play("Cat_Mew");
+                //FindObjectOfType<AudioManager>().PlayOneShot("Cat_Mew");
+                if (!audioSource.isPlaying)
+                {
+                    audioSource.clip = catMewing;
+                    audioSource.PlayOneShot(audioSource.clip, volume);
+                }
             }
             else if (alertLevel > 0)
             {
                 alertLevel -= decreasingRate * Time.deltaTime;
-                FindObjectOfType<AudioManager>().Play("CatWalking");
             }
         }
 
@@ -94,17 +107,21 @@ public class KittenController : MonoBehaviour
 
         Animator anim = GetComponent<Animator>();
         anim.Play("idle");
-        FindObjectOfType<AudioManager>().Play("Cat_Purr");
+
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
+            if (!audioSource.isPlaying)
+            {
+                audioSource.clip = catMewing;
+                audioSource.PlayOneShot(audioSource.clip, volume);
+            }
             gameState.isTrapTrigger = true;
             alertLevel = maxAlertLevel;
-            SceneManager.LoadScene("GameOver");
-            FindObjectOfType<AudioManager>().Play("Cat_Mew");
+            SceneManager.LoadScene("GameOver");   
         }
     }
 }

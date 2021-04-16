@@ -20,12 +20,12 @@ public class TrapTrigger : MonoBehaviour
             isTrigger = true;
             gameState.isTrapTrigger = true;
             Debug.Log(transform.gameObject.name + " triggered");
-            FindObjectOfType<AudioManager>().Play("CloserToTrap");
+           // FindObjectOfType<AudioManager>().Play("CloserToTrap");
         }
         if (isTrigger)
         {
             //play trigger animation
-            FindObjectOfType<AudioManager>().Play("TrapActive");
+            //FindObjectOfType<AudioManager>().Play("TrapActive");
         }
     }
 }
