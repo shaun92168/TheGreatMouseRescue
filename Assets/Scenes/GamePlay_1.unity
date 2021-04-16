@@ -1308,6 +1308,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1040068776517632705, guid: 8e169f200247d43488748be2f243fb59, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1619733447900260698, guid: 8e169f200247d43488748be2f243fb59, type: 3}
       propertyPath: m_Name
       value: Kitten1
@@ -1380,6 +1384,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 661442976}
+    - target: {fileID: 8704184857807415043, guid: 8e169f200247d43488748be2f243fb59, type: 3}
+      propertyPath: volume
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8e169f200247d43488748be2f243fb59, type: 3}
 --- !u!1 &373954725
@@ -2050,6 +2058,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1040068776517632705, guid: 8e169f200247d43488748be2f243fb59, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1619733447900260698, guid: 8e169f200247d43488748be2f243fb59, type: 3}
       propertyPath: m_Name
       value: Kitten2
@@ -2122,6 +2134,18 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 661442976}
+    - target: {fileID: 8704184857807415043, guid: 8e169f200247d43488748be2f243fb59, type: 3}
+      propertyPath: catWalking
+      value: 
+      objectReference: {fileID: 8300000, guid: a2b763259c2a4474787c7aa362508a19, type: 3}
+    - target: {fileID: 8704184857807415043, guid: 8e169f200247d43488748be2f243fb59, type: 3}
+      propertyPath: catMewing
+      value: 
+      objectReference: {fileID: 8300000, guid: 2029952a85d125f4e86ca087452cc0bc, type: 3}
+    - target: {fileID: 8704184857807415043, guid: 8e169f200247d43488748be2f243fb59, type: 3}
+      propertyPath: volume
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8e169f200247d43488748be2f243fb59, type: 3}
 --- !u!1001 &569053127
@@ -3080,6 +3104,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8390436168199521993, guid: ae126f1654c1d4841b2305fff0e54654, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ae126f1654c1d4841b2305fff0e54654, type: 3}
 --- !u!1 &790886105
@@ -3591,7 +3619,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7950641334650761198, guid: 5eba36678632dd648af81c075e81cae8, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -47.8
+      value: -48.14
       objectReference: {fileID: 0}
     - target: {fileID: 7950641334650761198, guid: 5eba36678632dd648af81c075e81cae8, type: 3}
       propertyPath: m_LocalRotation.x
@@ -6704,11 +6732,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4869983104958895620, guid: a5382ff1fc33df04aa25c752c24d21c2, type: 3}
       propertyPath: sounds.Array.data[4].loop
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4869983104958895620, guid: a5382ff1fc33df04aa25c752c24d21c2, type: 3}
       propertyPath: sounds.Array.data[5].loop
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4869983104958895621, guid: a5382ff1fc33df04aa25c752c24d21c2, type: 3}
       propertyPath: m_IsActive

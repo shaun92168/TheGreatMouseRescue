@@ -25,11 +25,18 @@ public class CatController : MonoBehaviour
     public float crawlRate = 0.2f;
     private float currentRate;
 
+    // SFX
+    AudioSource audioSource;
+    public AudioClip catMewing;
+    public AudioClip catPurring;
+    public float volume = 1f;
+    private bool playOtherSound = false;
     // set up variables
     void Start()
     {
         alertLevel = 0.0f;
         currentRate = 0.0f;
+        audioSource = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -71,6 +78,12 @@ public class CatController : MonoBehaviour
             if (isPlayerInRange)
             {
                 alertLevel += incrementRate * currentRate * Time.deltaTime;
+                if (!audioSource.isPlaying && !playOtherSound)
+                {
+                    volume = 0.8f;
+                    audioSource.clip = catPurring;
+                    audioSource.PlayOneShot(audioSource.clip, volume);
+                }
             }
             else if (alertLevel > 0)
             {
@@ -93,10 +106,16 @@ public class CatController : MonoBehaviour
         if (alertLevel/maxAlertLevel > 0.5)
         {
             anim.SetBool("sleeping", false);
+            playOtherSound = true;
+            if (!audioSource.isPlaying && isPlayerInRange)
+            {
+                audioSource.Stop();
+                audioSource.clip = catMewing;
+                audioSource.PlayOneShot(audioSource.clip, volume);
+            }
         }
         else
         {
-            anim.SetBool("sleeping", true);
         }
         
     }
@@ -105,6 +124,11 @@ public class CatController : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            if (!audioSource.isPlaying)
+            {
+                audioSource.clip = catMewing;
+                audioSource.PlayOneShot(audioSource.clip, volume);
+            }
             gameState.isTrapTrigger = true;
             alertLevel = maxAlertLevel;
             SceneManager.LoadScene("GameOver");
