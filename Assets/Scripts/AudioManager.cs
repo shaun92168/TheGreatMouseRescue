@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class AudioManager : MonoBehaviour
 {
 	public Sound[] sounds;
-
+	private bool isPlaying = false;
 	void Awake()
 	{
 		foreach (Sound s in sounds)
@@ -18,7 +18,7 @@ public class AudioManager : MonoBehaviour
 		}
 	}
 	void Start()
-    {
+	{
 		//Play("Theme1");
 
 		if (SceneManager.GetActiveScene().name == "GamePlay_1")
@@ -47,7 +47,7 @@ public class AudioManager : MonoBehaviour
 
 		s.source.volume = s.volume * (1f + UnityEngine.Random.Range(-s.volumeVariance / 2f, s.volumeVariance / 2f));
 		s.source.pitch = s.pitch * (1f + UnityEngine.Random.Range(-s.pitchVariance / 2f, s.pitchVariance / 2f));
-
+		isPlaying = true;
 		s.source.Play();
 	}
 
@@ -62,9 +62,50 @@ public class AudioManager : MonoBehaviour
 
 		s.source.volume = s.volume * (1f + UnityEngine.Random.Range(-s.volumeVariance / 2f, s.volumeVariance / 2f));
 		s.source.pitch = s.pitch * (1f + UnityEngine.Random.Range(-s.pitchVariance / 2f, s.pitchVariance / 2f));
-
+		isPlaying = false;
 		s.source.Stop();
 	}
 
+	public void PlayOnce(string sound)
+	{
+		Sound s = Array.Find(sounds, item => item.name == sound);
+		if (s == null)
+		{
+			Debug.LogWarning("Sound: " + name + " not found!");
+			return;
+		}
+		if (s.source.isPlaying == true)
+		{
+			s.source.Stop();
+			isPlaying = false;
+		}
+		if (s.source.isPlaying == false)
+		{
+			s.source.Play();
+			//isPlaying = true;
+		}
 
+	}
+
+	public void PlayOneShot(string sound)
+	{
+		Sound s = Array.Find(sounds, item => item.name == sound);
+		if (s == null)
+		{
+			Debug.LogWarning("Sound: " + name + " not found!");
+			return;
+		}
+		if (isPlaying == false)
+        {
+			s.source.volume = s.volume * (1f + UnityEngine.Random.Range(-s.volumeVariance / 2f, s.volumeVariance / 2f));
+			s.source.pitch = s.pitch * (1f + UnityEngine.Random.Range(-s.pitchVariance / 2f, s.pitchVariance / 2f));
+			s.source.PlayOneShot(s.source.clip, s.source.volume);
+			isPlaying = true;
+		}
+		else
+        {
+			s.source.Stop();
+			isPlaying = false;
+		}
+	}
 }

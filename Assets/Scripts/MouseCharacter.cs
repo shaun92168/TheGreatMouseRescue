@@ -251,7 +251,7 @@ public class MouseCharacter : MonoBehaviour
 
     public void Run()
     {
-        moveSpeed = 6.5f;
+        moveSpeed = 9f;
         gameState.playerState = 1;
     }
 
@@ -280,18 +280,21 @@ public class MouseCharacter : MonoBehaviour
         {
             gameState.level1Complete = true;
             Debug.Log("Level 1 Complete");
+            SceneManager.LoadScene("CutScene_2");
         }
 
         if (collision.gameObject.name == "Cheese_02")
         {
             gameState.level2Complete = true;
             Debug.Log("Level 2 Complete");
+            SceneManager.LoadScene("CutScene_3");
         }
 
         if (collision.gameObject.name == "cage")
         {
             gameState.level3Complete = true;
             Debug.Log("Level 3 Complete");
+            SceneManager.LoadScene("StoryScene_Act3");
         }
 
     }
