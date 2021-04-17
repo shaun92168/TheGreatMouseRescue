@@ -131,7 +131,8 @@ public class CatController : MonoBehaviour
             }
             gameState.isTrapTrigger = true;
             alertLevel = maxAlertLevel;
-            SceneManager.LoadScene("GameOver");
+            gameState.isGameOver = true;
+            //SceneManager.LoadScene("GameOver");
         }
     }
 }

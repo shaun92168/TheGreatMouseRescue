@@ -52,24 +52,30 @@ public class GameStateManager : MonoBehaviour
 
     void Update()
     {
-        if(gameState.isTrapTrigger)
+        if (gameState.isTrapTrigger)
         {
             gameState.isGameOver = true;
         }
-        if(gameState.isAlertFull)
+        if (gameState.isAlertFull)
         {
             gameState.isGameOver = true;
         }
-        if(gameState.isGameOver)
+        if (gameState.isGameOver)
         {
             //trigger cat, play animation
-            SceneManager.LoadScene("GameOver");
+            StartCoroutine(deathWaitCoroutine());
         }
 
         // escape to quit the game
         if (Input.GetKey("escape"))
         {
             SceneManager.LoadScene("GameOver");
-        }   
+        }
+    }
+
+    IEnumerator deathWaitCoroutine()
+    {
+        yield return new WaitForSeconds(1.5f);
+        SceneManager.LoadScene("GameOver");
     }
 }
