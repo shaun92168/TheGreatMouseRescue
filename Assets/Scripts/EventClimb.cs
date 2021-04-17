@@ -7,11 +7,15 @@ public class EventClimb : MonoBehaviour
     public Text label;
     public bool isClimb;
     public MouseCharacter mouseCharacter;
+    public GameObject goImageForClimb;
+    private Image promptImage;
 
     private void Awake()
     {
         label.text = "";
         isClimb = mouseCharacter.isClimbing;
+        goImageForClimb.active = false;
+        goImageForClimb.GetComponent<Image>().color = new Color(1f, 1f, 1f, .70f);
     }
 
     void Start()
@@ -25,7 +29,8 @@ public class EventClimb : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             //mouseCharacter.isClimbing = true;
-            label.text = "Press [C] to Climb !!!";
+            //label.text = "Press [C] to Climb !!!";
+            goImageForClimb.active = true;
             label.fontSize = 70;
         }
     }
@@ -35,6 +40,7 @@ public class EventClimb : MonoBehaviour
         {
             label.text = "";
             //mouseCharacter.isClimbing = false;
+            goImageForClimb.active = false;
         }
     }
 

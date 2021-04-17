@@ -18,6 +18,8 @@ public class EventJump : MonoBehaviour
     public Color SpotColor;
     public Text label;
     public bool canJump = false;
+    public GameObject goImage;
+    private Image promptImage;
 
     // Attempt for Lerp
     public Transform startTrans;
@@ -31,6 +33,9 @@ public class EventJump : MonoBehaviour
     {
         label.text = "";
         canJump = false;
+        goImage.active = false;
+        goImage.GetComponent<Image>().color = new Color(1f, 1f, 1f, .70f);
+
     }
 
 
@@ -79,7 +84,9 @@ public class EventJump : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             canJump = true;
-            label.text = "Press [J] to Jump!!!";
+            //label.text = "Press [J] to Jump!!!";
+            goImage.active = true;
+
             label.fontSize = 70;
         }
     }
@@ -88,6 +95,7 @@ public class EventJump : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             label.text = "";
+            goImage.active = false;
         }
         canJump = false;
     }
