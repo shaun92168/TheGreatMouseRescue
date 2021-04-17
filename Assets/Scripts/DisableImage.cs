@@ -4,22 +4,19 @@ using System.Collections;
 
 public class DisableImage : MonoBehaviour
 {
-    //public UnityEngine.UI.Image image;
     public RawImage image;
-    //public bool isImageOn;
-    //private bool enable;
 
 
     void Start()
     {
-
-
-        //isImageOn = true;
+        // Set an opaue color so we can see throug it to the player
+        image.color = new Color(1f, 1f, 1f, 0.7f);
         image.enabled = true;
     }
+
+
     public void OnMouseClick()
     {
-        //isImageOn = false;
         image.enabled = false;
     }
 }

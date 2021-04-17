@@ -9,15 +9,13 @@ public class EventJump : MonoBehaviour
     public Rigidbody mouseRigid;
     public float speed = 4f;
     public Transform target;
-/*    public float t;
-    public float forceUpward;
-    public float force;*/
 
     // Spot the player when enter
     // Ask for jump 
     public Color SpotColor;
     public Text label;
     public bool canJump = false;
+    public GameObject goJumpImage;
 
     // Attempt for Lerp
     public Transform startTrans;
@@ -31,15 +29,17 @@ public class EventJump : MonoBehaviour
     {
         label.text = "";
         canJump = false;
+        goJumpImage.SetActive(false);
+        goJumpImage.GetComponent<Image>().color = new Color(1f, 1f, 1f, 0.7f);
     }
 
 
     // Lerp to target position
-
     void Start()
     {
         positionToMoveTo = endTrans.position;
     }
+
 
     private void Update()
     {
@@ -60,6 +60,7 @@ public class EventJump : MonoBehaviour
         }
     }
 
+
     IEnumerator LerpPosition(Vector3 targetPosition, float duration)
     {
         float time = 0;
@@ -74,23 +75,26 @@ public class EventJump : MonoBehaviour
         startTrans.position = targetPosition;
     }
 
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
             canJump = true;
-            label.text = "Press [J] to Jump!!!";
+            label.text = "";
             label.fontSize = 70;
+            goJumpImage.SetActive(true);
         }
     }
+
+
     private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Player"))
         {
             label.text = "";
+            goJumpImage.SetActive(false);
         }
         canJump = false;
     }
-
-
 }
